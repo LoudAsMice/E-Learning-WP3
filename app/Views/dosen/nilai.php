@@ -10,6 +10,7 @@
                         <th scope="col">No.</th>
                         <th scope="col">Prodi</th>
                         <th scope="col">Matakuliah</th>
+                        <th scope="col">Kelas</th>
                         <th scope="col">NIM</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Judul</th>
@@ -26,6 +27,7 @@
                         <td><?= $a++;?></td>
                         <td><?= $n['prodi'];?></td>
                         <td><?= $n['matakuliah'];?></td>
+                        <td><?= $n['kelas'];?></td>
                         <td><?= $n['nim'];?></td>
                         <td><?= $n['nama'];?></td>
                         <td><?= $n['judul'];?></td>

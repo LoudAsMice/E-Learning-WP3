@@ -90,6 +90,7 @@ class Kuliah extends BaseController
             'id_tugas' => $tugas['id'],
             'prodi' => $tugas['prodi'],
             'matakuliah' => $tugas['matakuliah'],
+            'kelas' => $tugas['kelas'],
             'pertemuan' => $tugas['pertemuan'],
             'judul' => $tugas['judul'],
             'tugas_created' => $tugas['tanggal'],
@@ -107,7 +108,7 @@ class Kuliah extends BaseController
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
-        $data['judul'] = 'Send Tugas';
+        $data['judul'] = 'Ubah Tugas';
         $data['uri'] = service('uri');
         $data['validation'] = \Config\Services::validation();
         $mhs = $modeluser->getMahasiswa(['nim' => session('username')])->getRowArray();
@@ -118,7 +119,7 @@ class Kuliah extends BaseController
             echo view('templates/header', $data);
             echo view('templates/sidebar', $data);
             echo view('templates/topbar', $data);
-            echo view('kuliah/send', $data);
+            echo view('kuliah/ubah', $data);
             echo view('templates/footer');
         } else {
             return $this->_ubah();
@@ -130,23 +131,14 @@ class Kuliah extends BaseController
         $db = \Config\Database::connect();
         $modelkuliah = new ModelKuliah();
         $uri = service('uri');
-        $tugas = $modelkuliah->joinTugas(['tugas.id' => $uri->getSegment(3)])->getRowArray();
+        // $tugas = $db->table('nilai')->getWhere(['id_tugas' => $uri->getSegment(3)])->getRowArray();
         $data = [
-            'nim' => session('username'),
-            'nip' => $tugas['nip'],
-            'id_tugas' => $tugas['id'],
-            'prodi' => $tugas['prodi'],
-            'matakuliah' => $tugas['matakuliah'],
-            'pertemuan' => $tugas['pertemuan'],
-            'judul' => $tugas['judul'],
-            'tugas_created' => $tugas['tanggal'],
-            'created' => time(),
-            'updated' => time(),
-            'link' => $_POST['link']
+            'link' => $_POST['link'],
+            'updated' => time()
         ];
 
-        $db->table('nilai')->set($data)->insert();
-        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Send Tugas Berhasil!</div>');
+        $db->table('nilai')->set($data)->where(['id_tugas' => $uri->getSegment(3)])->update();
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil ubah!</div>');
         return redirect()->to('kuliah/tugas');
     }
 
