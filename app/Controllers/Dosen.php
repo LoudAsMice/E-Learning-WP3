@@ -452,4 +452,68 @@ class Dosen extends BaseController
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Tugas Berhasil Dihapus </div>');
         return redirect()->to('dosen/tugas');
     }
+
+    public function absensi()
+    {
+        $modeluser = new ModelUser();
+        $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmatkul = base64_decode($uri->getSegment(3));
+        $kelas = base64_decode($uri->getSegment(4));
+
+        $data['judul'] = 'Absensi Mahasiswa';
+        $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
+        $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmatkul], ['kelas' => $kelas])->getResultArray();
+        $data['pertemuan'] = $db->table('absen')->where(['matkul' => $idmatkul], ['kelas' => $kelas])->countAllResults();
+        $data['validation'] = \Config\Services::validation();
+
+        if(!$this->request->getPost()){
+        echo view('templates/header', $data);
+        echo view('templates/sidebar', $data);
+        echo view('templates/topbar', $data);
+        echo view('dosen/absensi', $data);
+        echo view('templates/footer');
+        } else {
+            return $this->_absensi();
+        }
+    }
+
+    private function _absensi()
+    {
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment('3'));
+        $db = \Config\Database::connect();
+        $rules = [
+            'pertemuan' => 'required',
+        ];
+
+        $messages = [
+            'pertemuan' => [
+                'required' => 'Pertemuan Harus Dipilih'
+            ]
+        ];
+
+        if(!$this->validate($rules, $messages)){
+            session()->setFlashdata('pesan', '<div class="alert alert-danger alert-message" role="alert">Open Absensi Gagal, Silahkan dicek kembali!</div>');
+            return redirect()->back()->withInput();
+        } else {
+            $kls = base64_decode($uri->getSegment('4'));
+            $get = $db->table('mahasiswa')->getWhere(['kelas' => $kls])->getResultArray();
+            var_dump($get);
+            foreach ($get as $g){
+                $data = [
+                    'nim' => $g['nim'],
+                    'kelas' => $g['kelas'],
+                    'matkul' => $idmtk,
+                    'pertemuan' => $_POST['pertemuan'],
+                    'tanggal' => time(),
+                    'status' => 'Belum Selesai'
+                ];
+                $db->table('absen')->set($data)->insert();
+            }
+            session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Open Absensi Berhasil!</div>');
+            return redirect()->back()->withInput();
+        }
+    }
 }

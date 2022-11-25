@@ -25,6 +25,11 @@ class ModelKuliah extends Model
         return $this->db->table('tugas')->getWhere($where);
     }
 
+    public function getAbsensi($where = null)
+    {
+        return $this->db->table('absen')->select('*')->join('mahasiswa', 'absen.nim = mahasiswa.nim')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere($where);
+    }
+
     public function hapusMateri($where = null)
     {
         return $this->db->table('materi')->delete($where);
