@@ -24,6 +24,7 @@
                     $a = 1;
                     foreach($absensi  as $m) {?>
                     <tr>
+                        
                         <td><?= $a++;?></td>
                         <td><?= $m['nim'];?></td>
                         <td><?= $m['nama'];?></td>
@@ -34,8 +35,7 @@
                         <td><?= $m['status_absen'];?></td>
                         <td><?= $m['status'];?></td>
                         <td>
-                            <a href="<?= base_url('dosen/ubahmateri').'/'.$m['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                            <a href="<?= base_url('dosen/hapusmateri').'/'.$m['id'];?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Materi pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>
+                            <a href="<?= base_url('dosen/edit').'/'.base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Edit</a>
                         </td>
                     </tr>
                     <?php }?>
