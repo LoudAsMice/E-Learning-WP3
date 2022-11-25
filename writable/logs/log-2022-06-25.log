@@ -1,0 +1,130 @@
+ERROR - 2022-06-25 08:08:45 --> MySQL server has gone away
+ERROR - 2022-06-25 08:08:45 --> MySQL server has gone away
+ERROR - 2022-06-25 08:08:56 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-25 08:08:56 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\projectweb2\app\Models\ModelUser.php(29): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(33): App\Models\ModelUser->cekData(Array)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(89): App\Controllers\Autentifikasi->_login()
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Autentifikasi->cek()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Autentifikasi))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-25 08:09:09 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-25 08:09:09 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\projectweb2\app\Models\ModelUser.php(29): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(33): App\Models\ModelUser->cekData(Array)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(89): App\Controllers\Autentifikasi->_login()
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Autentifikasi->cek()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Autentifikasi))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-25 08:09:57 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-25 08:09:57 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\projectweb2\app\Models\ModelUser.php(29): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(33): App\Models\ModelUser->cekData(Array)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(89): App\Controllers\Autentifikasi->_login()
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Autentifikasi->cek()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Autentifikasi))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-25 08:10:42 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-25 08:10:42 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\projectweb2\app\Models\ModelUser.php(29): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#3 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(33): App\Models\ModelUser->cekData(Array)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Autentifikasi.php(89): App\Controllers\Autentifikasi->_login()
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Autentifikasi->cek()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Autentifikasi))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-25 08:41:45 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(384): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 384)
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->hapusmahasiswa('10')
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-25 08:44:34 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(107): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('17')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-25 08:44:53 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(107): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('17')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-25 08:45:15 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(107): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('17')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-25 09:30:52 --> Unknown column 'tanggal' in 'field list'
+CRITICAL - 2022-06-25 09:30:52 --> Unknown column 'tanggal' in 'field list'
+#0 C:\xampp\htdocs\projectweb2\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ni...', 0)
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ni...')
+#2 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ni...')
+#3 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ni...', Array, false)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Kuliah.php(92): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\projectweb2\app\Controllers\Kuliah.php(72): App\Controllers\Kuliah->_send()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Kuliah->send('6')
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#8 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-06-25 09:31:31 --> Unknown column 'tanggal' in 'field list'
+CRITICAL - 2022-06-25 09:31:31 --> Unknown column 'tanggal' in 'field list'
+#0 C:\xampp\htdocs\projectweb2\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO `ni...', 0)
+#1 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ni...')
+#2 C:\xampp\htdocs\projectweb2\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ni...')
+#3 C:\xampp\htdocs\projectweb2\system\Database\BaseBuilder.php(1771): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ni...', Array, false)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Kuliah.php(92): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\projectweb2\app\Controllers\Kuliah.php(72): App\Controllers\Kuliah->_send()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Kuliah->send('6')
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#8 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}

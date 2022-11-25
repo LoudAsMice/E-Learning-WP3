@@ -1,0 +1,545 @@
+CRITICAL - 2022-06-11 00:00:18 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(48): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->member()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 00:00:47 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(48): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->member()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 00:01:39 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(48): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->member()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 00:03:00 --> Cannot access offset of type string on string
+#0 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#3 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(49): view('user/member', Array)
+#4 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->member()
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#9 {main}
+CRITICAL - 2022-06-11 00:03:07 --> Undefined array key "anggota"
+#0 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(44): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 44)
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->member()
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#3 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+ERROR - 2022-06-11 00:09:06 --> Table 'elearning.buku' doesn't exist
+CRITICAL - 2022-06-11 00:09:06 --> Call to a member function getRowArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Buku->hapusbuku('2')
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Buku))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 01:05:35 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(89): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-11 01:15:08 --> Unknown column 'email' in 'where clause'
+CRITICAL - 2022-06-11 01:15:08 --> Call to a member function getRowArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 01:15:35 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\Admin.php(44): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Admin->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-11 01:17:21 --> Unknown column 'email' in 'where clause'
+CRITICAL - 2022-06-11 01:17:21 --> Call to a member function getRowArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 01:17:40 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(30): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 01:18:48 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(31): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 01:19:27 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(31): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 01:19:32 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(31): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 01:20:15 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(31): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->index()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:04:16 --> Undefined array key "email"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubah-profil.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubah-profi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(115): view('user/ubah-profi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahprofil()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:12:40 -->  route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\projectweb2\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\projectweb2\system\Common.php(832): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\projectweb2\app\Controllers\Kuliah.php(17): redirect('kuliah/mahasisw...')
+#3 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\Kuliah->index()
+#4 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-06-11 21:12:42 --> Undefined array key "email"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubah-profil.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubah-profi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(115): view('user/ubah-profi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahprofil()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:13:03 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(62): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->admin()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:13:16 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:14:52 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:20:33 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:21:51 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(25): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 25)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:22:01 --> Undefined array key "nama"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 31)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-11 21:41:28 --> Table 'elearning.dosen' doesn't exist
+CRITICAL - 2022-06-11 21:41:28 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->dosen()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 21:44:49 --> Table 'elearning.dosen' doesn't exist
+CRITICAL - 2022-06-11 21:44:49 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->dosen()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 21:48:40 --> Undefined array key "nim"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(76): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->dosen()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:49:25 --> Undefined array key "fakultas"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\member.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/member', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(76): view('user/member', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->dosen()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 21:51:05 --> Invalid file: user/mahasiswa.php
+#0 C:\xampp\htdocs\projectweb2\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('user/mahasiswa....')
+#1 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/mahasiswa', Array, true)
+#2 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(92): view('user/mahasiswa', Array)
+#3 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#4 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-06-11 22:06:45 --> Undefined array key "id"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\datamahasiswa.php(33): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 33)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/datamahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(90): view('user/datamahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+ERROR - 2022-06-11 22:07:34 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:07:34 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:07:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:07:37 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:07:59 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:07:59 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:08:00 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:08:00 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:08:17 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:08:17 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:08:35 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:08:35 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-06-11 22:08:41 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'IS NULL' at line 4
+CRITICAL - 2022-06-11 22:08:41 --> Call to a member function getResultArray() on bool
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 22:11:38 --> Undefined constant "App\Controllers\uri"
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 22:11:45 --> Undefined constant "App\Controllers\uri"
+#0 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa()
+#1 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#2 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-11 22:18:30 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:18:51 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:19:13 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:20:01 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:20:46 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:21:00 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(104): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('3')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:21:51 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(89): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->mahasiswa()
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:22:12 --> Undefined array key "id"
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(5): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 5)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(106): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:22:21 --> Undefined variable $user
+#0 C:\xampp\htdocs\projectweb2\app\Views\templates\topbar.php(27): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 27)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('templates/topba...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(105): view('templates/topba...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:22:41 --> Undefined variable $validation
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 16)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(106): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:23:53 --> Undefined variable $validation
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 16)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(106): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-11 22:24:19 --> Undefined variable $validation
+#0 C:\xampp\htdocs\projectweb2\app\Views\user\ubahmahasiswa.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 16)
+#1 C:\xampp\htdocs\projectweb2\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\projectweb2\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\projectweb2\system\Common.php(1089): CodeIgniter\View\View->render('user/ubahmahasi...', Array, true)
+#4 C:\xampp\htdocs\projectweb2\app\Controllers\User.php(106): view('user/ubahmahasi...', Array)
+#5 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(832): App\Controllers\User->ubahmahasiswa('2')
+#6 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#7 C:\xampp\htdocs\projectweb2\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\projectweb2\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\projectweb2\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}

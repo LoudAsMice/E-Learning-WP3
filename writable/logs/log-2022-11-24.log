@@ -1,0 +1,233 @@
+CRITICAL - 2022-11-24 04:56:51 --> array_unique(): Argument #1 ($array) must be of type array, string given
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\materi.php(79): array_unique('Web Programming')
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/materi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(25): view('dosen/materi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 04:57:50 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 17)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(17): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 04:57:51 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 17)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(17): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 04:57:52 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 17)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(17): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 04:58:48 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(20): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 05:00:55 --> Undefined array key "matakuliah"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\materi.php(79): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 79)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/materi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(26): view('dosen/materi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 05:06:28 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(20): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 05:06:43 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(20): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 05:10:17 --> Array to string conversion
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string...', 'C:\\xampp\\htdocs...', 20)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(20): array_unique(Array)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-11-24 05:13:00 --> Undefined array key "kelas"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\materi.php(91): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 91)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/materi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(25): view('dosen/materi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 05:19:33 --> Undefined variable $matkul
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\tugas.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 74)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/tugas', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(187): view('dosen/tugas', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->tugas()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 05:33:28 --> Undefined array key "kelas"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahmateri.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 46)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahmater...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(107): view('dosen/ubahmater...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahmateri('10')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 05:34:18 --> Undefined array key "kelas"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahmateri.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 46)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahmater...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(107): view('dosen/ubahmater...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahmateri('10')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 06:05:12 --> Undefined variable $materi
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahtugas.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahtugas', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(383): view('dosen/ubahtugas', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahtugas('6')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 06:05:38 --> Undefined variable $materi
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahtugas.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahtugas', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(383): view('dosen/ubahtugas', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahtugas('6')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 10:29:47 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\templates\sidebar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 60)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(24): view('templates/sideb...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 10:29:53 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\templates\sidebar.php(60): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 60)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(194): view('templates/sideb...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->tugas()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-24 19:14:20 --> syntax error, unexpected token "echo"
+#0 C:\xampp\htdocs\E-Learning-WP3\system\Router\Router.php(175): CodeIgniter\Router\Router->autoRoute('/kuliah/tugas')
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('/kuliah/tugas')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-24 19:14:32 --> Undefined array key "id"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 47)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-24 19:16:40 --> Undefined array key "id"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 47)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-24 19:17:02 --> Undefined array key 1
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 47)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-24 19:19:41 --> Undefined array key "id"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 48)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-24 19:29:28 --> Unclosed '{' on line 23
+#0 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/tugas', Array, true)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(55): view('kuliah/tugas', Array)
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
