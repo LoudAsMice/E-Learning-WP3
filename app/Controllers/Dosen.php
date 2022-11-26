@@ -461,11 +461,15 @@ class Dosen extends BaseController
         $uri = service('uri');
         $idmatkul = base64_decode($uri->getSegment(3));
         $kelas = base64_decode($uri->getSegment(4));
+        $status = "Belum Selesai";
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmatkul])->getRowArray();
 
+        $data['kelas'] = $kelas ." || ". $mtk['matakuliah'];
         $data['judul'] = 'Absensi Mahasiswa';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmatkul], ['kelas' => $kelas])->getResultArray();
-        $data['pertemuan'] = $db->table('absen')->where(['matkul' => $idmatkul], ['kelas' => $kelas])->countAllResults();
+        $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmatkul, 'absen.kelas' => $kelas])->getResultArray();
+        $data['pertemuan'] = $db->table('absen')->where(['matkul' => $idmatkul, 'kelas' => $kelas])->orderBy('absen.pertemuan','desc')->get()->getRowArray();
+        $data['cek'] = $db->table('absen')->where(['matkul' => $idmatkul, 'kelas' => $kelas, 'status' => $status])->get()->getResultArray();
         $data['validation'] = \Config\Services::validation();
 
         if(!$this->request->getPost()){
@@ -513,6 +517,21 @@ class Dosen extends BaseController
                 $db->table('absen')->set($data)->insert();
             }
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Open Absensi Berhasil!</div>');
+            return redirect()->back()->withInput()  ;
+        }
+    }
+
+    public function close()
+    {
+        $uri = \Config\Services::uri();
+        $id = base64_decode($uri->getSegment(3));
+        $kls = base64_decode($uri->getSegment(4));
+        $db = \Config\Database::connect();
+
+        $cek = $db->table('absen')->getWhere(['matkul' => $id, 'kelas' => $kls, 'status' => 'Belum Selesai'])->getResultArray();
+
+        foreach($cek as $c){
+            $db->table('absen')->set(['status' => 'Sudah Selesai'])->update();
             return redirect()->back()->withInput();
         }
     }

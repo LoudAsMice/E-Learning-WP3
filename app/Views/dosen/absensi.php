@@ -2,8 +2,19 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
-            <?= session()->getFlashdata('pesan');?>
-            <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#absenBaruModal"><i class="fas fa-file-alt"> Open Absensi</i></a>
+            <div class="text-center">
+                <h1 class="h4 mb-2 text-dark"><?= $kelas;?></h1>
+                <?= session()->getFlashdata('pesan');?>
+                <?php if($cek == null){?>
+                <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#absenBaruModal"><i class="fas fa-fingerprint"> Open Absensi</i></a>
+                <?php } else {
+                $uri = service('uri');
+                $id = $uri->getSegment(3);
+                $kls = $uri->getSegment(4);    
+                ?>
+                <a href="<?= base_url('dosen/close'.'/'.$id.'/'.$kls);?>" class="btn btn-danger mb-3"><i class="fas fa-fingerprint"> Tutup Absensi</i></a>
+                <?php }?>
+            </div>
             <table class="table table-hover table-primary table-stripped table-responsive" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
@@ -69,7 +80,11 @@
                     <select name="pertemuan" class="form-control form-control-user">
                         <option value="">-- Pertemuan --</option>
                         <?php 
-                        $i = $pertemuan + 1;
+                        if($pertemuan == null){
+                            $i = 1;
+                        } else {
+                        $i = $pertemuan['pertemuan'] + 1;
+                        }
                         for ($i; $i<=15; $i++){
                         ?>
                         <option value="<?= $i;?>">Pertemuan <?= $i;?></option>

@@ -47,30 +47,30 @@
     <li class="nav-item">
         <?php
             $db = \Config\Database::connect();
-            $matkul = $db->table('matakuliah')->select('kelas')->distinct()->getWhere(['nip' => session('username')])->getResultArray();
+            $matkul = $db->table('matakuliah')->select('matakuliah')->distinct()->getWhere(['nip' => session('username')])->getResultArray();
             // var_dump($kelas);
             $i = 2;
             foreach ($matkul as $mtk) {
         ?>
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data<?= $i;?>"aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-book"></i>
-            <span><?= $mtk['kelas'];?></span>
+            <span><?= $mtk['matakuliah'];?></span>
         </a>
         <div id="data<?= $i;?>" class="collapse" aria-labelledby="headingUtilities"data-parent="#accordionSidebar">
             <div class="bg-gray-800 py-2 collapse-inner rounded">
                 <h6 class="collapse-header text-light">Pilih:</h6>
                 <?php 
-                $getmatkul = $db->table('matakuliah')->getWhere(['kelas' => $mtk['kelas']])->getResultArray();
+                $getkls = $db->table('matakuliah')->getWhere(['matakuliah' => $mtk['matakuliah']])->getResultArray();
                 // var_dump($getmatkul);
-                foreach ($getmatkul as $m) {?>
-                <a class="collapse-item text-light" href="<?= base_url('dosen/absensi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"><?= $m['matakuliah']?></a>
+                foreach ($getkls as $m) {?>
+                <a class="collapse-item text-light" href="<?= base_url('dosen/absensi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"><?= $m['kelas']?></a>
                 </a>
                 <?php }?>
             </div>
         </div>
-        <?php $i++;}?>
+        <?php $i++;}}?>
     </li>
-    <?php }?>
+    
     
     
     <?php if(session('role_id') == 3){?>
