@@ -47,7 +47,7 @@ class ModelKuliah extends Model
 
     public function joinTugas($where)
     {
-        return $this->db->table('dosen')->select('*')->join('tugas', 'tugas.nip = dosen.nip')->where($where)->get();
+        return $this->db->table('dosen')->select('*')->join('tugas', 'tugas.nip = dosen.nip')->where($where)->orderBy('tanggal', 'desc')->get();
     }
 
     public function joinNilai($where)

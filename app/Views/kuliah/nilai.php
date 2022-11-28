@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             <?= session()->getFlashdata('pesan');?>
-            <table class="table table-hover table-success table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-success table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No.</th>

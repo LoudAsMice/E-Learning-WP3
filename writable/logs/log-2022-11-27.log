@@ -1,0 +1,221 @@
+CRITICAL - 2022-11-27 20:57:07 --> Undefined variable $user
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\templates\sidebar.php(120): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 120)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('templates/sideb...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(188): view('templates/sideb...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 20:57:25 --> Undefined variable $nilai
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\nilai.php(24): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 24)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/nilai', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(191): view('kuliah/nilai', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 20:57:38 --> Invalid file: kuliah/absensi.php
+#0 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('kuliah/absensi....')
+#1 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/absensi', Array, true)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(191): view('kuliah/absensi', Array)
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 21:06:14 --> Undefined variable $kelas
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\absensi.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/absensi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(195): view('kuliah/absensi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 21:06:21 --> Undefined variable $kelas
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\absensi.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/absensi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(195): view('kuliah/absensi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 21:06:22 --> Undefined variable $kelas
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\absensi.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/absensi', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(195): view('kuliah/absensi', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('NA==', 'MTUuNUIuMDE=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 21:14:24 --> Undefined array key "status_absen"
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 192)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('MQ==', 'MTUuNUIuMDE=')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 21:21:48 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 192)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('MQ==', 'MTUuNUIuMDE=')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 21:27:24 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(192): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 192)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->absensi('MQ==', 'MTUuNUIuMDE=')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 22:10:22 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 22:11:17 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas('dsad', 'dsadas')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 22:16:03 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 57)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->tugas('dsad', 'dsadas')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-11-27 22:17:42 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:18:12 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:19:29 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:20:39 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:20:47 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:26:20 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:28:18 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(144): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(135): App\Controllers\Kuliah->_ubah()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==')
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#8 {main}
+CRITICAL - 2022-11-27 22:28:19 --> Undefined variable $idmtk
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\ubah.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/ubah', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(132): view('kuliah/ubah', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==', 'MTUuNUIuMDE=', 'Nw==')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 22:28:22 --> Undefined variable $idmtk
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\kuliah\ubah.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 6)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('kuliah/ubah', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(132): view('kuliah/ubah', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->ubah('NA==', 'MTUuNUIuMDE=', 'Nw==')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-11-27 22:33:01 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(99): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 99)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Kuliah.php(87): App\Controllers\Kuliah->_send()
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Kuliah->send('MQ==', 'MTUuNUIuMDE=', 'Ng==')
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Kuliah))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}

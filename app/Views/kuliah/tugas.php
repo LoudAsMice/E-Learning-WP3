@@ -3,7 +3,7 @@
     <div class="row">
         <div class="col-lg-12">
             <?= session()->getFlashdata('pesan');?>
-            <table class="table table-hover table-warning table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-warning table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No.</th>
@@ -33,11 +33,14 @@
                         <td>
                             <?php
                             $cek = $db->table('nilai')->where(['id_tugas' => $m['id']])->countAllResults();
+                            $uri = service('uri');
+                            $idmtk = $uri->getSegment(3);
+                            $kelas = $uri->getSegment(4);
                             if ($cek == 0) {
                             ?>
-                            <a href="<?= base_url('kuliah/send').'/'.$m['id'];?>" class="btn btn-success">Kerjakan</a>
+                            <a href="<?= base_url('kuliah/send').'/'. $idmtk . '/' . $kelas . '/' . base64_encode($m['id']);?>" class="btn btn-success">Kerjakan</a>
                             <?php } else {?>
-                            <a href="<?= base_url('kuliah/ubah').'/'.$m['id'];?>" class="btn btn-success">Ubah</a>
+                            <a href="<?= base_url('kuliah/ubah').'/' . $idmtk . '/' . $kelas . '/' . base64_encode($m['id']);?>" class="btn btn-success">Ubah</a>
                         </td>
                         <?php }?>
                         <?php }?>

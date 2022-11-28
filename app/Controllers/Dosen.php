@@ -12,11 +12,18 @@ class Dosen extends BaseController
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
         $data['judul'] = 'Upload Materi';
+        $uri = service('uri');
+        $db = \Config\Database::connect();
+        $idmtk = base64_decode($uri->getSegment(3));
+        $kelas = base64_decode($uri->getSegment(4));
+        $matkul = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
         // $dosen = $modeluser->getDosen(['nip']);
+        $data['klas'] = $kelas ." || ". $matkul['matakuliah'];
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['kelas'] = $modelkuliah->getKelasDistinct(['nip' => session('username')])->getResultArray();
         $data['matkul'] = $modelkuliah->getMatkulDistinct(['nip' => session('username')])->getResultArray();
-        $data['materi'] = $modelkuliah->getMateri(['nip' => session('username')])->getResultArray();
+        $data['materi'] = $modelkuliah->getMateri(['nip' => session('username'), 'matakuliah' => $matkul['matakuliah'], 'kelas' => $kelas])->getResultArray();
+        $data['pertemuan'] = $db->table('materi')->where(['matakuliah' => $matkul['matakuliah'], 'kelas' => $kelas])->orderBy('pertemuan','desc')->get()->getRowArray();
         $data['validation'] = \Config\Services::validation();
 
         if(!$this->request->getPost()){
@@ -33,10 +40,11 @@ class Dosen extends BaseController
     private function _materi()
     {
         $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        $kls = base64_decode($uri->getSegment(4));
         $rules = [
-            'prodi' => 'required',
-            'matakuliah' => 'required',
-            'kelas' => 'required',
             'judul' => 'required',
             'deskripsi' => 'required',
             'pertemuan' => 'required',
@@ -44,15 +52,6 @@ class Dosen extends BaseController
         ];
 
         $messages = [
-            'prodi' => [
-                'required' => 'Prodi Harus Dipilih'
-            ],
-            'matakuliah' => [
-                'required' => 'Matakuliah Harus Diisi'
-            ],
-            'kelas' => [
-                'required' => 'Kelas Harus Diisi'
-            ],
             'judul' => [
                 'required' => 'Judul Harus Diisi'
             ],
@@ -73,9 +72,9 @@ class Dosen extends BaseController
         } else {
             $data = [
                 'nip' => session('username'),
-                'prodi' => $_POST['prodi'],
-                'matakuliah' => $_POST['matakuliah'],
-                'kelas' => $_POST['kelas'],
+                'prodi' => $mtk['prodi'],
+                'matakuliah' => $mtk['matakuliah'],
+                'kelas' => $kls,
                 'tanggal' => time(),
                 'pertemuan' => $_POST['pertemuan'],
                 'judul' => $_POST['judul'],
@@ -84,7 +83,7 @@ class Dosen extends BaseController
             ];
             $db->table('materi')->set($data)->insert();
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Penambahan Materi Berhasil!</div>');
-            return redirect()->to('dosen/materi');
+            return redirect()->back()->withInput();
         }
     }
 
@@ -92,13 +91,16 @@ class Dosen extends BaseController
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+
         $uri = service('uri');
         $data['validation'] = \Config\Services::validation();
         $data['judul'] = 'Ubah Materi';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['matkul'] = $modelkuliah->getMatkulDistinct(['nip' => session('username')])->getResultArray();
         $data['kelas'] = $modelkuliah->getKelasDistinct(['nip' => session('username')])-> getResultArray();
-        $data['materi'] = $modelkuliah->getMateri(['id' => $uri->getSegment(3)])->getRowArray();
+        // $data['pertemuan'] = $db->table('materi')->where(['matakuliah' => $mtk['matakuliah'], 'kelas' => $kelas])->orderBy('pertemuan','desc')->get()->getRowArray();
+        $data['materi'] = $modelkuliah->getMateri(['id' => base64_decode($uri->getSegment(5))])->getRowArray();
 
         if(!$this->request->getPost()){
         echo view('templates/header', $data);
@@ -115,10 +117,9 @@ class Dosen extends BaseController
     {
         $db = \Config\Database::connect();
         $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kelas = $uri->getSegment(4);
         $rules = [
-            'prodi' => 'required',
-            'matakuliah' => 'required',
-            'kelas' => 'required',
             'judul' => 'required',
             'deskripsi' => 'required',
             'pertemuan' => 'required',
@@ -126,15 +127,6 @@ class Dosen extends BaseController
         ];
 
         $messages = [
-            'prodi' => [
-                'required' => 'Prodi Harus Dipilih'
-            ],
-            'matakuliah' => [
-                'required' => 'Matakuliah Harus Diisi'
-            ],
-            'kelas' => [
-                'required' => 'Kelas Harus Diisi'
-            ],
             'judul' => [
                 'required' => 'Judul Harus Diisi'
             ],
@@ -154,17 +146,14 @@ class Dosen extends BaseController
             return redirect()->back()->withInput();
         } else {
             $data = [
-                'prodi' => $_POST['prodi'],
-                'matakuliah' => $_POST['matakuliah'],
-                'kelas' => $_POST['kelas'],
                 'judul' => $_POST['judul'],
                 'deskripsi' => $_POST['deskripsi'],
                 'pertemuan' => $_POST['pertemuan'],
                 'link' => $_POST['link']
             ];
-            $db->table('materi')->set($data)->where('id', $uri->getSegment(3))->update();
+            $db->table('materi')->set($data)->where('id', base64_decode($uri->getSegment(5)))->update();
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Perubahan Materi Berhasil!</div>');
-            return redirect()->to('dosen/materi')->withInput();
+            return redirect()->to('dosen/materi' . '/' . $idmtk . '/' . $kelas)->withInput();
         }
     }
 
@@ -172,21 +161,28 @@ class Dosen extends BaseController
     {
         $modelkuliah = new ModelKuliah();
         $uri = service('uri');
-        $modelkuliah->hapusmateri(['id' => $uri->getSegment(3)]);
+        $modelkuliah->hapusmateri(['id' => base64_decode($uri->getSegment(3))]);
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Materi Berhasil Dihapus </div>');
-        return redirect()->to('dosen/materi');
+        return redirect()->back()->withInput();
     }
 
     public function tugas()
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        $kelas = base64_decode($uri->getSegment(4));
         $data['judul'] = 'Upload Tugas';
-        // $dosen = $modeluser->getDosen(['nip']);
+
+        $data['klas'] = $kelas ." || ". $mtk['matakuliah'];
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['kelas'] = $modelkuliah->getKelasDistinct(['nip' => session('username')])->getResultArray();
         $data['matkul'] = $modelkuliah->getMatkulDistinct(['nip' => session('username')])->getResultArray();
-        $data['tugas'] = $modelkuliah->getTugas(['nip' => session('username')])->getResultArray();
+        $data['tugas'] = $modelkuliah->getTugas(['nip' => session('username'), 'matakuliah' => $mtk['matakuliah'], 'kelas' => $kelas])->getResultArray();
+        $data['pertemuan'] = $db->table('tugas')->where(['matakuliah' => $mtk['matakuliah'], 'kelas' => $kelas])->orderBy('pertemuan','desc')->get()->getRowArray();
         $data['validation'] = \Config\Services::validation();
 
         if(!$this->request->getPost()){
@@ -203,10 +199,11 @@ class Dosen extends BaseController
     private function _tugas()
     {
         $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        $kelas = base64_decode($uri->getSegment(4));
         $rules = [
-            'prodi' => 'required',
-            'matakuliah' => 'required',
-            'kelas' => 'required',
             'judul' => 'required',
             'deskripsi' => 'required',
             'pertemuan' => 'required',
@@ -214,15 +211,6 @@ class Dosen extends BaseController
         ];
 
         $messages = [
-            'prodi' => [
-                'required' => 'Prodi Harus Dipilih'
-            ],
-            'matakuliah' => [
-                'required' => 'Matakuliah Harus Diisi'
-            ],
-            'kelas' => [
-                'required' => 'Kelas Harus Diisi'
-            ],
             'judul' => [
                 'required' => 'Judul Harus Diisi'
             ],
@@ -243,8 +231,9 @@ class Dosen extends BaseController
         } else {
             $data = [
                 'nip' => session('username'),
-                'prodi' => $_POST['prodi'],
-                'matakuliah' => $_POST['matakuliah'],
+                'prodi' => $mtk['prodi'],
+                'matakuliah' => $mtk['matakuliah'],
+                'kelas' => $kelas,
                 'tanggal' => time(),
                 'pertemuan' => $_POST['pertemuan'],
                 'judul' => $_POST['judul'],
@@ -253,7 +242,7 @@ class Dosen extends BaseController
             ];
             $db->table('tugas')->set($data)->insert();
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Penambahan Tugas Berhasil!</div>');
-            return redirect()->to('dosen/tugas');
+            return redirect()->back()->withInput();
         }
     }
 
@@ -261,9 +250,14 @@ class Dosen extends BaseController
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        $kelas = base64_decode($uri->getSegment(4));
         $data['judul'] = 'Nilai Tugas Mahasiswa';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['nilai'] = $modelkuliah->joinNilai(['nilai.nip' => session('username'), 'is_nilai' => 0])->getResultArray();
+        $data['nilai'] = $modelkuliah->joinNilai(['nilai.nip' => session('username'), 'is_nilai' => 0, 'matakuliah' => $mtk['matakuliah'], 'nilai.kelas' => $kelas])->getResultArray();
         $data['validation'] = \Config\Services::validation();
 
         echo view('templates/header', $data);
@@ -391,10 +385,9 @@ class Dosen extends BaseController
     {
         $db = \Config\Database::connect();
         $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kelas = $uri->getSegment(4);
         $rules = [
-            'prodi' => 'required',
-            'matakuliah' => 'required',
-            'kelas' => 'required',
             'judul' => 'required',
             'deskripsi' => 'required',
             'pertemuan' => 'required',
@@ -402,15 +395,6 @@ class Dosen extends BaseController
         ];
 
         $messages = [
-            'prodi' => [
-                'required' => 'Prodi Harus Dipilih'
-            ],
-            'matakuliah' => [
-                'required' => 'Matakuliah Harus Diisi'
-            ],
-            'kelas' => [
-                'required' => 'Kelas Harus Diisi'
-            ],
             'judul' => [
                 'required' => 'Judul Harus Diisi'
             ],
@@ -430,9 +414,6 @@ class Dosen extends BaseController
             return redirect()->back()->withInput();
         } else {
             $data = [
-                'prodi' => $_POST['prodi'],
-                'matakuliah' => $_POST['matakuliah'],
-                'kelas' => $_POST['kelas'],
                 'judul' => $_POST['judul'],
                 'deskripsi' => $_POST['deskripsi'],
                 'pertemuan' => $_POST['pertemuan'],
@@ -440,7 +421,7 @@ class Dosen extends BaseController
             ];
             $db->table('tugas')->set($data)->where('id', $uri->getSegment(3))->update();
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Perubahan Materi Berhasil!</div>');
-            return redirect()->to('dosen/tugas')->withInput();
+            return redirect()->to('dosen/tugas' . '/' . $idmtk . '/' . $kelas)->withInput();
         }
     }
 
@@ -448,9 +429,9 @@ class Dosen extends BaseController
     {
         $modelkuliah = new ModelKuliah();
         $uri = service('uri');
-        $modelkuliah->hapusTugas(['id' => $uri->getSegment(3)]);
+        $modelkuliah->hapusTugas(['id' => base64_decode($uri->getSegment(3))]);
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Tugas Berhasil Dihapus </div>');
-        return redirect()->to('dosen/tugas');
+        return redirect()->back()->withInput();
     }
 
     public function absensi()

@@ -23,10 +23,16 @@ class Kuliah extends BaseController
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
         $mhs = $modeluser->getMahasiswa(['nim' => session('username')])->getRowArray();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        // var_dump($idmtk);
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        
         $data['judul'] = 'Materi';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['materi'] = $modelkuliah->joinMateri(['kelas' => $mhs['kelas']])->getResultArray();
+        $data['materi'] = $modelkuliah->joinMateri(['kelas' => $mhs['kelas'], 'matakuliah' => $mtk['matakuliah']])->getResultArray();
 
         echo view('templates/header', $data);
         echo view('templates/sidebar', $data);
@@ -39,12 +45,16 @@ class Kuliah extends BaseController
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
         $data['db'] = \Config\Database::connect();
         $mhs = $modeluser->getMahasiswa(['nim' => session('username')])->getRowArray();
-        // $tugas = $modelkuliah->joinTugas(['kelas' => $mhs['kelas']])->getResultArray();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+
         $data['judul'] = 'Tugas';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['tugas'] = $modelkuliah->joinTugas(['kelas' => $mhs['kelas']])->getResultArray();
+        $data['tugas'] = $modelkuliah->joinTugas(['kelas' => $mhs['kelas'], 'matakuliah' => $mtk['matakuliah']])->getResultArray();
         // var_dump($data['tugas']);
         // $data['cek'] = $db->table('nilai')->where(['nim' => session('username')])->countAllResults();
         // var_dump($data['cek']);
@@ -83,7 +93,10 @@ class Kuliah extends BaseController
         $db = \Config\Database::connect();
         $modelkuliah = new ModelKuliah();
         $uri = service('uri');
-        $tugas = $modelkuliah->joinTugas(['tugas.id' => $uri->getSegment(3)])->getRowArray();
+        $id = base64_decode($uri->getSegment(5));
+        $idmtk = $uri->getSegment(3);
+        $kelas = $uri->getSegment(4);
+        $tugas = $modelkuliah->joinTugas(['tugas.id' => $id])->getRowArray();
         $data = [
             'nim' => session('username'),
             'nip' => $tugas['nip'],
@@ -101,7 +114,7 @@ class Kuliah extends BaseController
 
         $db->table('nilai')->set($data)->insert();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Send Tugas Berhasil!</div>');
-        return redirect()->to('kuliah/tugas');
+        return redirect()->to('kuliah/tugas'. '/' . $idmtk . '/' . $kelas);
     }
 
     public function ubah()
@@ -131,29 +144,64 @@ class Kuliah extends BaseController
         $db = \Config\Database::connect();
         $modelkuliah = new ModelKuliah();
         $uri = service('uri');
+        $id = base64_decode($uri->getSegment(5));
+        $idmtk = $uri->getSegment(3);
+        $kelas = $uri->getSegment(4);
         // $tugas = $db->table('nilai')->getWhere(['id_tugas' => $uri->getSegment(3)])->getRowArray();
         $data = [
             'link' => $_POST['link'],
             'updated' => time()
         ];
 
-        $db->table('nilai')->set($data)->where(['id_tugas' => $uri->getSegment(3)])->update();
+        $db->table('nilai')->set($data)->where(['id_tugas' => $id])->update();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil ubah!</div>');
-        return redirect()->to('kuliah/tugas');
+        print_r('kuliah/tugas'. '/' . $idmtk . '/' . $kelas);
+        return redirect()->to('kuliah/tugas'. '/' . $idmtk . '/' . $kelas);
     }
 
     public function nilai()
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+
         $data['judul'] = 'Nilai Tugas';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['nilai'] = $modelkuliah->joinNilai(['mahasiswa.nim' => session('username')])->getResultArray();
+        $data['nilai'] = $modelkuliah->joinNilai(['mahasiswa.nim' => session('username'), 'matakuliah' => $mtk['matakuliah']])->getResultArray();
 
         echo view('templates/header', $data);
         echo view('templates/sidebar', $data);
         echo view('templates/topbar', $data);
         echo view('kuliah/nilai', $data);
         echo view('templates/footer');
+    }
+
+    public function absensi()
+    {
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $modeluser = new ModelUser();
+        $modelkuliah = new ModelKuliah();
+        $status = "Belum Selesai";
+        $idmtk = base64_decode($uri->getSegment(3));
+        $kelas = base64_decode($uri->getSegment(4));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+
+        $data['kelas'] = $kelas ." || ". $mtk['matakuliah'];
+        $data['judul'] = 'Nilai Tugas';
+        $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
+        $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmtk, 'absen.nim' => session('username')])->getResultArray();
+        // $data['pertemuan'] = $db->table('absen')->where(['matkul' => $idmtk, 'nim' => session('username')])->orderBy('absen.pertemuan','desc')->get()->getRowArray();
+        $data['cek'] = $db->table('absen')->where(['matkul' => $idmtk, 'nim' => session('username'), 'status' => $status])->get()->getRowArray();
+
+        echo view('templates/header', $data);
+        echo view('templates/sidebar', $data);
+        echo view('templates/topbar', $data);
+        echo view('kuliah/absensi', $data);
+        echo view('templates/footer');
+
     }
 }

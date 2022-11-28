@@ -2,9 +2,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
+            <div class="text-center">
+                <h1 class="h4 mb-2 text-dark"><?= $klas;?></h1>
+            </div>
             <?= session()->getFlashdata('pesan');?>
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#materiBaruModal"><i class="fas fa-file-alt"> Tambah Materi</i></a>
-            <table class="table table-hover table-primary table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-primary table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -22,6 +25,9 @@
                 <tbody>
                     <?php 
                     $a = 1;
+                    $uri = service('uri');
+                    $idmtk = $uri->getSegment(3);
+                    $kelas = $uri->getSegment(4);
                     foreach($materi  as $m) {?>
                     <tr>
                         <td><?= $a++;?></td>
@@ -34,8 +40,8 @@
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
                         <td><?= $m['link'];?></td>
                         <td>
-                        <a href="<?= base_url('dosen/ubahmateri').'/'.$m['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                            <a href="<?= base_url('dosen/hapusmateri').'/'.$m['id'];?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Materi pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>
+                        <a href="<?= base_url('dosen/ubahmateri'). '/' . $idmtk . '/' . $kelas . '/'. base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                            <a href="<?= base_url('dosen/hapusmateri').'/'. base64_encode($m['id']);?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Materi pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php }?>
@@ -58,45 +64,13 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('dosen/materi');?>" method="post" enctype="multipart/form-data">
+            <?php
+            $uri = service('uri');
+            $idmtk = $uri->getSegment(3);
+            $kls = $uri->getSegment(4);
+            ?>
+            <form action="<?= base_url('dosen/materi/'. $idmtk . '/' . $kls);?>" method="post" enctype="multipart/form-data">
             <div class="modal-body">
-                <div class="form-group">
-                    <select name="prodi" class="form-control form-control-user">
-                        <option value="">--Pilih Prodi--</option>
-                        <option value="Ilmu Komputer">Ilmu Komputer</option>
-                        <option value="Ilmu Ekonomi">Ilmu Ekonomi</option>
-                        <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('prodi');?></small>
-                </div>
-                <div class="form-group">
-                    <select name="matakuliah" class="form-control form-control-user">
-                        <option value="">--Pilih Matakuliah--</option>
-                        <?php
-                        foreach ($matkul as $mtk)
-                        {
-                        ?>
-                        <option value="<?= $mtk['matakuliah'];?>"><?= $mtk['matakuliah'];?></option>
-                        <?php }?>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('matakuliah');?></small>
-                </div>
-                <div class="form-group">
-                    <select name="kelas" class="form-control form-control-user">
-                        <option value="">--Pilih Kelas--</option>
-                        <?php
-                        foreach ($kelas as $kls)
-                        {
-                        ?>
-                        <option value="<?= $kls['kelas'];?>"><?= $kls['kelas'];?></option>
-                        <?php }?>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('kelas');?></small>
-                </div>
-                <!-- <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="matakuliah" name="matakuliah" placeholder="Masukkan Nama Matakuliah">
-                    <small class="text-danger pl-1"><?= $validation->getError('matakuliah');?></small>
-                </div> -->
                 <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Masukkan Judul">
                     <small class="text-danger pl-1"><?= $validation->getError('judul');?></small>
@@ -106,7 +80,19 @@
                     <small class="text-danger pl-1"><?= $validation->getError('deskripsi');?></small>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="pertemuan" name="pertemuan" placeholder="Masukkan Pertemuan">
+                    <select name="pertemuan" class="form-control form-control-user">
+                        <option value="">-- Pertemuan --</option>
+                        <?php 
+                        if($pertemuan == null){
+                            $i = 1;
+                        } else {
+                        $i = $pertemuan['pertemuan'] + 1;
+                        }
+                        for ($i; $i<=15; $i++){
+                        ?>
+                        <option value="<?= $i;?>">Pertemuan <?= $i;?></option>
+                        <?php }?>
+                    </select>
                     <small class="text-danger pl-1"><?= $validation->getError('pertemuan');?></small>
                 </div>
                 <div class="form-group">

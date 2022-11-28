@@ -3,7 +3,13 @@
     <div class="row"> 
         <div class="col-lg-9">
         <?= session()->getFlashdata('pesan');?>
-            <form action="<?= base_url('kuliah/ubah').'/'.$uri->getSegment(3);?>" enctype="multipart/form-data" method="post">
+        <?php 
+        $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kelas = $uri->getSegment(4);
+        $id = $uri->getSegment(5);
+        ?>
+            <form action="<?= base_url('kuliah/ubah').'/'. $idmtk . '/' . $kelas . '/' . $id;?>" enctype="multipart/form-data" method="post">
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Link</label>
                     <div class="col-sm-10">

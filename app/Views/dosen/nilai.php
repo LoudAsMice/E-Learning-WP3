@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <?= session()->getFlashdata('pesan');?>
             <div class="table-responsive">
-            <table class="table table-hover table-danger table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-danger table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">No.</th>

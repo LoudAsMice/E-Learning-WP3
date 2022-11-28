@@ -15,7 +15,7 @@
                 <a href="<?= base_url('dosen/close'.'/'.$id.'/'.$kls);?>" class="btn btn-danger mb-3"><i class="fas fa-fingerprint"> Tutup Absensi</i></a>
                 <?php }?>
             </div>
-            <table class="table table-hover table-primary table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-primary table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>

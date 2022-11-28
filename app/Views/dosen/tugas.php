@@ -2,9 +2,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
+            <div class="text-center">
+                <h1 class="h4 mb-2 text-dark"><?= $klas;?></h1>
+            </div>
             <?= session()->getFlashdata('pesan');?>
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tugasBaruModal"><i class="fas fa-file-alt"> Tambah Tugas</i></a>
-            <table class="table table-hover table-warning table-stripped table-responsive" id="dataTable">
+            <table class="table table-hover table-warning table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -58,41 +61,13 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= base_url('dosen/tugas');?>" method="post" enctype="multipart/form-data">
+            <?php
+            $uri = service('uri');
+            $idmtk = $uri->getSegment(3);
+            $kls = $uri->getSegment(4);
+            ?>
+            <form action="<?= base_url('dosen/tugas/'. $idmtk . '/' . $kls);?>" method="post" enctype="multipart/form-data">
             <div class="modal-body">
-                <div class="form-group">
-                    <select name="prodi" class="form-control form-control-user">
-                        <option value="">--Pilih Prodi--</option>
-                        <option value="Ilmu Komputer">Ilmu Komputer</option>
-                        <option value="Ilmu Ekonomi">Ilmu Ekonomi</option>
-                        <option value="Ilmu Komunikasi">Ilmu Komunikasi</option>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('prodi');?></small>
-                </div>
-                <div class="form-group">
-                    <select name="matakuliah" class="form-control form-control-user">
-                        <option value="">--Pilih Matakuliah--</option>
-                        <?php
-                        foreach ($matkul as $mtk)
-                        {
-                        ?>
-                        <option value="<?= $mtk['matakuliah'];?>"><?= $mtk['matakuliah'];?></option>
-                        <?php }?>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('matakuliah');?></small>
-                </div>
-                <div class="form-group">
-                    <select name="kelas" class="form-control form-control-user">
-                        <option value="">--Pilih Kelas--</option>
-                        <?php
-                        foreach ($kelas as $kls)
-                        {
-                        ?>
-                        <option value="<?= $kls['kelas'];?>"><?= $kls['kelas'];?></option>
-                        <?php }?>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('kelas');?></small>
-                </div>
                 <div class="form-group">
                     <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Masukkan Judul">
                     <small class="text-danger pl-1"><?= $validation->getError('judul');?></small>
@@ -102,7 +77,19 @@
                     <small class="text-danger pl-1"><?= $validation->getError('deskripsi');?></small>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="pertemuan" name="pertemuan" placeholder="Masukkan Pertemuan">
+                    <select name="pertemuan" class="form-control form-control-user">
+                        <option value="">-- Pertemuan --</option>
+                        <?php 
+                        if($pertemuan == null){
+                            $i = 1;
+                        } else {
+                        $i = $pertemuan['pertemuan'] + 1;
+                        }
+                        for ($i; $i<=15; $i++){
+                        ?>
+                        <option value="<?= $i;?>">Pertemuan <?= $i;?></option>
+                        <?php }?>
+                    </select>
                     <small class="text-danger pl-1"><?= $validation->getError('pertemuan');?></small>
                 </div>
                 <div class="form-group">
