@@ -1,7 +1,16 @@
+<?php
+    $uri = service('uri');
+    $idmtk = $uri->getSegment(3);
+    $kls = $uri->getSegment(4);
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12">
+            <div class="text-center">
+                <h1 class="h4 mb-2 text-dark"><?= $klas;?></h1>
+            </div>
             <?= session()->getFlashdata('pesan');?>
             <table class="table table-hover table-success table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
@@ -37,7 +46,7 @@
                         <td><?= date('d-m-Y H:i:s',$n['created']);?></td>
                         <td><?= date('d-m-Y H:i:s',$n['updated']);?></td>
                         <td>
-                            <a href="<?= base_url('dosen/ubahnilai').'/'.$n['id'];?>" class="btn btn-success">Ubah Nilai</a>
+                            <a href="<?= base_url('dosen/ubahnilai').'/'.$idmtk.'/'.$kls.'/'.base64_encode($n['id']);?>" class="btn btn-success">Ubah Nilai</a>
                         </td>
                     </tr>
                     <?php }?>

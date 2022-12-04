@@ -1,9 +1,14 @@
+<?php
+    $uri = service('uri');
+    $idmtk = $uri->getSegment(3);
+    $kls = $uri->getSegment(4);
+?>
 <!-- Begin Page Content --> 
 <div class="container-fluid"> 
     <div class="row"> 
         <div class="col-lg-9">
         <?= session()->getFlashdata('pesan');?>
-            <form action="<?= base_url('dosen/ubahnilai').'/'.$uri->getSegment(3);?>" enctype="multipart/form-data" method="post">
+            <form action="<?= base_url('dosen/ubahnilai').'/'.$idmtk.'/'.$kls.'/'.$uri->getSegment(5);?>" enctype="multipart/form-data" method="post">
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Komentar</label>
                     <div class="col-sm-10">

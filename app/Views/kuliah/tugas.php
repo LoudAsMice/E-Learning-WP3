@@ -33,6 +33,7 @@
                         <td>
                             <?php
                             $cek = $db->table('nilai')->where(['id_tugas' => $m['id']])->countAllResults();
+                            // $isnilai = $db->table('nilai')->where(['id_tugas' => $m['id'], 'is_nilai' => 1])->countAllResults();
                             $uri = service('uri');
                             $idmtk = $uri->getSegment(3);
                             $kelas = $uri->getSegment(4);

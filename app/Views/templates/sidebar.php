@@ -20,7 +20,7 @@
 <!-- Nav Item - Dashboard -->
 
 <li class="nav-item active">
-    <?php if(session('role_id') == 2){?>
+    <!-- <?php if(session('role_id') == 2){?>
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
@@ -43,7 +43,7 @@
     <hr class="sidebar-divider my-0">
     <div class="sidebar-heading">
         Absensi
-    </div>
+    </div> -->
     <li class="nav-item">
         <?php
             $db = \Config\Database::connect();

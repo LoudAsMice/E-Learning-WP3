@@ -255,6 +255,8 @@ class Dosen extends BaseController
         $idmtk = base64_decode($uri->getSegment(3));
         $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
         $kelas = base64_decode($uri->getSegment(4));
+
+        $data['klas'] = $kelas ." || ". $mtk['matakuliah'];
         $data['judul'] = 'Nilai Tugas Mahasiswa';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['nilai'] = $modelkuliah->joinNilai(['nilai.nip' => session('username'), 'is_nilai' => 0, 'matakuliah' => $mtk['matakuliah'], 'nilai.kelas' => $kelas])->getResultArray();
@@ -292,6 +294,8 @@ class Dosen extends BaseController
     {
         $db = \Config\Database::connect();
         $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kls = $uri->getSegment(4);
         $data = [
             'komentar' => $_POST['komentar'],
             'nilai' => $_POST['nilai'],
@@ -299,9 +303,9 @@ class Dosen extends BaseController
             'updated' => time()
         ];
 
-        $db->table('nilai')->set($data)->where(['id' => $uri->getSegment(3)])->update();
+        $db->table('nilai')->set($data)->where(['id' => base64_decode($uri->getSegment(5))])->update();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Send Nilai Berhasil!</div>');
-        return redirect()->to('dosen/nilai');
+        return redirect()->to('dosen/nilai'. '/' . $idmtk . '/' . $kls);
     }
 
     public function ubahnilai()
@@ -312,7 +316,7 @@ class Dosen extends BaseController
         $data['judul'] = 'Ubah Nilai';
         $data['uri'] = service('uri');
         $data['validation'] = \Config\Services::validation();
-        $data['nilai'] = $db->table('nilai')->getWhere(['id' => $uri->getSegment(3)])->getRowArray();
+        $data['nilai'] = $db->table('nilai')->getWhere(['id' => base64_decode($uri->getSegment(5))])->getRowArray();
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
 
         if(!$this->request->getPost()){
@@ -330,25 +334,33 @@ class Dosen extends BaseController
     {
         $db = \Config\Database::connect();
         $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kls = $uri->getSegment(4);
         $data = [
             'komentar' => $_POST['komentar'],
             'nilai' => $_POST['nilai'],
-            'is_nilai' => 1,
             'updated' => time()
         ];
 
-        $db->table('nilai')->set($data)->where(['id' => $uri->getSegment(3)])->update();
+        $db->table('nilai')->set($data)->where(['id' => base64_decode($uri->getSegment(5))])->update();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Ubah Nilai Berhasil!</div>');
-        return redirect()->to('dosen/semua');
+        return redirect()->to('dosen/semua'.'/'.$idmtk.'/'.$kls);
     }
 
     public function semua()
     {
         $modeluser = new ModelUser();
         $modelkuliah = new ModelKuliah();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = base64_decode($uri->getSegment(3));
+        $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
+        $kelas = base64_decode($uri->getSegment(4));
+
+        $data['klas'] = $kelas ." || ". $mtk['matakuliah'];
         $data['judul'] = 'Semua Nilai';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
-        $data['nilai'] = $modelkuliah->joinNilai(['nilai.nip' => session('username')])->getResultArray();
+        $data['nilai'] = $modelkuliah->joinNilai(['nilai.nip' => session('username'), 'matakuliah' => $mtk['matakuliah'], 'nilai.kelas' => $kelas, 'nilai.is_nilai' => 1])->getResultArray();
         $data['validation'] = \Config\Services::validation();
 
         echo view('templates/header', $data);
@@ -368,7 +380,7 @@ class Dosen extends BaseController
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['kelas'] = $modelkuliah->getKelasDistinct(['nip' => session('username')])->getResultArray();
         $data['matkul'] = $modelkuliah->getMatkulDistinct(['nip' => session('username')])->getResultArray();
-        $data['tugas'] = $modelkuliah->getTugas(['id' => $uri->getSegment(3)])->getRowArray();
+        $data['tugas'] = $modelkuliah->getTugas(['id' => base64_decode($uri->getSegment(5))])->getRowArray();
 
         if(!$this->request->getPost()){
         echo view('templates/header', $data);
@@ -419,7 +431,7 @@ class Dosen extends BaseController
                 'pertemuan' => $_POST['pertemuan'],
                 'link' => $_POST['link']
             ];
-            $db->table('tugas')->set($data)->where('id', $uri->getSegment(3))->update();
+            $db->table('tugas')->set($data)->where('id', base64_decode($uri->getSegment(5)))->update();
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Perubahan Materi Berhasil!</div>');
             return redirect()->to('dosen/tugas' . '/' . $idmtk . '/' . $kelas)->withInput();
         }
@@ -485,7 +497,7 @@ class Dosen extends BaseController
         } else {
             $kls = base64_decode($uri->getSegment('4'));
             $get = $db->table('mahasiswa')->getWhere(['kelas' => $kls])->getResultArray();
-            var_dump($get);
+            // var_dump($get);
             foreach ($get as $g){
                 $data = [
                     'nim' => $g['nim'],
@@ -498,8 +510,45 @@ class Dosen extends BaseController
                 $db->table('absen')->set($data)->insert();
             }
             session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Open Absensi Berhasil!</div>');
-            return redirect()->back()->withInput()  ;
+            return redirect()->back()->withInput();
         }
+    }
+
+    public function editabsensi()
+    {
+        $modeluser = new ModelUser();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $data['judul'] = 'Edit Absensi';
+        $data['uri'] = service('uri');
+        $data['validation'] = \Config\Services::validation();
+        $data['absensi'] = $db->table('absen')->getWhere(['id' => base64_decode($uri->getSegment(5))])->getRowArray();
+        $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
+
+        if(!$this->request->getPost()){
+            echo view('templates/header', $data);
+            echo view('templates/sidebar', $data);
+            echo view('templates/topbar', $data);
+            echo view('dosen/editabsensi', $data);
+            echo view('templates/footer');
+        } else {
+            return $this->_editabsensi();
+        }
+    }
+
+    private function _editabsensi()
+    {
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $idmtk = $uri->getSegment(3);
+        $kls = $uri->getSegment(4);
+        $data = [
+            'status_absen' => $_POST['status']
+        ];
+
+        $db->table('absen')->set($data)->where(['id' => base64_decode($uri->getSegment(5))])->update();
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Edit Absensi Berhasil!</div>');
+        return redirect()->to('dosen/absensi'. '/' . $idmtk . '/' . $kls);
     }
 
     public function close()

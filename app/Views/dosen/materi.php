@@ -38,7 +38,7 @@
                         <td><?= $m['deskripsi'];?></td>
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
-                        <td><?= $m['link'];?></td>
+                        <td><a href="<?= $m['link'];?>" target="_blank"><?= $m['link'];?></a></td>
                         <td>
                         <a href="<?= base_url('dosen/ubahmateri'). '/' . $idmtk . '/' . $kelas . '/'. base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
                             <a href="<?= base_url('dosen/hapusmateri').'/'. base64_encode($m['id']);?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Materi pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>

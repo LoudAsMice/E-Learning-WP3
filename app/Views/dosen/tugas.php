@@ -1,3 +1,9 @@
+<?php
+    $uri = service('uri');
+    $idmtk = $uri->getSegment(3);
+    $kls = $uri->getSegment(4);
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="row">
@@ -35,10 +41,10 @@
                         <td><?= $m['deskripsi'];?></td>
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
-                        <td><?= $m['link'];?></td>
+                        <td><a href="<?= $m['link'];?>" target="_blank"><?= $m['link'];?></a></td>
                         <td>
-                            <a href="<?= base_url('dosen/ubahtugas').'/'.$m['id'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
-                            <a href="<?= base_url('dosen/hapustugas').'/'.$m['id'];?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Tugas pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>
+                            <a href="<?= base_url('dosen/ubahtugas'). '/' . $idmtk . '/' . $kls .'/'. base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
+                            <a href="<?= base_url('dosen/hapustugas').'/'. base64_encode($m['id']);?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= 'Tugas pertemuan '.$m['pertemuan']. ' matakuliah ' .$m['matakuliah'];?>?');"><i class="fas fa-trash"></i> Hapus</a>
                         </td>
                     </tr>
                     <?php }?>
@@ -61,46 +67,41 @@
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <?php
-            $uri = service('uri');
-            $idmtk = $uri->getSegment(3);
-            $kls = $uri->getSegment(4);
-            ?>
             <form action="<?= base_url('dosen/tugas/'. $idmtk . '/' . $kls);?>" method="post" enctype="multipart/form-data">
-            <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Masukkan Judul">
-                    <small class="text-danger pl-1"><?= $validation->getError('judul');?></small>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="judul" name="judul" placeholder="Masukkan Judul">
+                        <small class="text-danger pl-1"><?= $validation->getError('judul');?></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi">
+                        <small class="text-danger pl-1"><?= $validation->getError('deskripsi');?></small>
+                    </div>
+                    <div class="form-group">
+                        <select name="pertemuan" class="form-control form-control-user">
+                            <option value="">-- Pertemuan --</option>
+                            <?php 
+                            if($pertemuan == null){
+                                $i = 1;
+                            } else {
+                            $i = $pertemuan['pertemuan'] + 1;
+                            }
+                            for ($i; $i<=15; $i++){
+                            ?>
+                            <option value="<?= $i;?>">Pertemuan <?= $i;?></option>
+                            <?php }?>
+                        </select>
+                        <small class="text-danger pl-1"><?= $validation->getError('pertemuan');?></small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-user" id="link" name="link" placeholder="Masukkan Link">
+                        <small class="text-danger pl-1"><?= $validation->getError('link');?></small>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="deskripsi" name="deskripsi" placeholder="Masukkan Deskripsi">
-                    <small class="text-danger pl-1"><?= $validation->getError('deskripsi');?></small>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</button>
                 </div>
-                <div class="form-group">
-                    <select name="pertemuan" class="form-control form-control-user">
-                        <option value="">-- Pertemuan --</option>
-                        <?php 
-                        if($pertemuan == null){
-                            $i = 1;
-                        } else {
-                        $i = $pertemuan['pertemuan'] + 1;
-                        }
-                        for ($i; $i<=15; $i++){
-                        ?>
-                        <option value="<?= $i;?>">Pertemuan <?= $i;?></option>
-                        <?php }?>
-                    </select>
-                    <small class="text-danger pl-1"><?= $validation->getError('pertemuan');?></small>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="link" name="link" placeholder="Masukkan Link">
-                    <small class="text-danger pl-1"><?= $validation->getError('link');?></small>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
-                <button type="submit" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Tambah</button>
-            </div>
             </form>
         </div>
     </div>

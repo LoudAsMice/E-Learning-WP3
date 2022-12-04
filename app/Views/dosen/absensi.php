@@ -1,3 +1,9 @@
+<?php
+    $uri = service('uri');
+    $idmtk = $uri->getSegment(3);
+    $kls = $uri->getSegment(4);
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="row">
@@ -43,10 +49,22 @@
                         <td><?= $m['matakuliah'];?></td>
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
-                        <td><?= $m['status_absen'];?></td>
-                        <td><?= $m['status'];?></td>
                         <td>
-                            <a href="<?= base_url('dosen/edit').'/'.base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Edit</a>
+                            <?php if($m['status_absen'] == "Tidak Hadir") {?>
+                                <a href="javascript:void(0)" class="btn btn-danger"> <?= $m['status_absen'];?></a>
+                            <?php }else{?>
+                                <a href="javascript:void(0)" class="btn btn-success"> <?= $m['status_absen'];?></a>
+                            <?php }?>
+                        </td>
+                        <td>
+                            <?php if($m['status'] == "Belum Selesai") {?>
+                                <a href="javascript:void(0)" class="btn btn-danger"> <?= $m['status'];?></a>
+                            <?php }else{?>
+                                <a href="javascript:void(0)" class="btn btn-warning"> <?= $m['status'];?></a>
+                            <?php }?>
+                        </td>
+                        <td>
+                            <a href="<?= base_url('dosen/editabsensi').'/'.$idmtk.'/'.$kls.'/'.base64_encode($m['id']);?>" class="badge badge-info"><i class="fas fa-edit"></i> Edit</a>
                         </td>
                     </tr>
                     <?php }?>

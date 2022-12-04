@@ -1,0 +1,85 @@
+ERROR - 2022-12-03 21:57:17 --> Column 'kelas' in where clause is ambiguous
+CRITICAL - 2022-12-03 21:57:17 --> Column 'kelas' in where clause is ambiguous
+#0 C:\xampp\htdocs\E-Learning-WP3\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Models\ModelKuliah.php(55): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(362): App\Models\ModelKuliah->joinNilai(Array)
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->semua('MQ==', 'MTUuNUIuMDE=')
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#8 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-12-03 22:06:08 --> Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+CRITICAL - 2022-12-03 22:06:08 --> Illegal mix of collations (utf8mb4_general_ci,IMPLICIT) and (utf8_general_ci,COERCIBLE) for operation '='
+#0 C:\xampp\htdocs\E-Learning-WP3\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Database\BaseBuilder.php(1588): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Models\ModelKuliah.php(10): CodeIgniter\Database\BaseBuilder->getWhere(Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(25): App\Models\ModelKuliah->getMateri(Array)
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->materi('NA==', 'youtube.com')
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#8 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+CRITICAL - 2022-12-03 22:29:52 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahmateri.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 11)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahmater...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(109): view('dosen/ubahmater...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahmateri('NA==', 'MTUuNUIuMDE=', 'MTI=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-12-03 22:30:04 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahmateri.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 11)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahmater...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(109): view('dosen/ubahmater...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahmateri('NA==', 'MTUuNUIuMDE=', 'MTI=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-12-03 22:30:09 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahmateri.php(11): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 11)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahmater...', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(109): view('dosen/ubahmater...', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahmateri('NA==', 'MTUuNUIuMDE=', 'MTI=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-12-03 22:46:07 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Views\dosen\ubahnilai.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 10)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\E-Learning-WP3\system\Common.php(1089): CodeIgniter\View\View->render('dosen/ubahnilai', Array, true)
+#4 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(326): view('dosen/ubahnilai', Array)
+#5 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahnilai('MQ==', 'MTUuNUIuMDE=', 'MjM=')
+#6 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#7 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-12-03 22:50:31 --> Request URI segment is out of range: 4
+#0 C:\xampp\htdocs\E-Learning-WP3\system\HTTP\URI.php(529): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+#1 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(319): CodeIgniter\HTTP\URI->getSegment(4)
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->ubahnilai('MQ==')
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#4 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
