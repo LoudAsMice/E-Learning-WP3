@@ -12,7 +12,7 @@
                 $id = $uri->getSegment(3);
                 $kls = $uri->getSegment(4);
                 ?>
-                <a href="<?= base_url('dosen/close'.'/'.$id.'/'.$kls);?>" class="btn btn-success mb-3"><i class="fas fa-fingerprint"> Absen</i></a>
+                <a href="<?= base_url('kuliah/absen'.'/'.$id.'/'.$kls);?>" class="btn btn-success mb-3"><i class="fas fa-fingerprint"> Absen</i></a>
                 <?php } else {?>
                     <a href="javascript:void(0)" class="btn btn-warning mb-3"><i class="fas fa-fingerprint"> Sudah Absen</i></a>
                 <?php }?>

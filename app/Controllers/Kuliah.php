@@ -155,7 +155,6 @@ class Kuliah extends BaseController
 
         $db->table('nilai')->set($data)->where(['id_tugas' => $id])->update();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil ubah!</div>');
-        print_r('kuliah/tugas'. '/' . $idmtk . '/' . $kelas);
         return redirect()->to('kuliah/tugas'. '/' . $idmtk . '/' . $kelas);
     }
 
@@ -191,7 +190,7 @@ class Kuliah extends BaseController
         $mtk = $db->table('matakuliah')->getWhere(['id' => $idmtk])->getRowArray();
 
         $data['kelas'] = $kelas ." || ". $mtk['matakuliah'];
-        $data['judul'] = 'Nilai Tugas';
+        $data['judul'] = 'Absensi';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmtk, 'absen.nim' => session('username')])->getResultArray();
         // $data['pertemuan'] = $db->table('absen')->where(['matkul' => $idmtk, 'nim' => session('username')])->orderBy('absen.pertemuan','desc')->get()->getRowArray();
@@ -203,5 +202,55 @@ class Kuliah extends BaseController
         echo view('kuliah/absensi', $data);
         echo view('templates/footer');
 
+    }
+
+    public function view()
+    {
+        $modeluser = new ModelUser();
+        $db = \Config\Database::connect();
+        $data['uri'] = service('uri');
+        $data['judul'] = 'Data Matakuliah';
+        $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
+        $data['matkul'] = $db->table('matakuliah')->get()->getResultArray();
+        $data['dosen'] = $db->table('dosen')->get()->getResultArray();
+        $data['validation'] = \Config\Services::validation();
+
+        if (!$this->request->getPost()){
+        echo view('templates/header', $data);
+        echo view('templates/sidebar', $data);
+        echo view('templates/topbar', $data);
+        echo view('kuliah/view', $data);
+        echo view('templates/footer');
+        } else {
+            return $this->_addmtk();
+        }
+    }
+
+    private function _addmtk()
+    {
+        $db = \Config\Database::connect();
+
+        $data = [
+            'prodi' => $_POST['prodi'],
+            'matakuliah' => $_POST['matakuliah'],
+            'kelas' => $_POST['kelas'],
+            'nip' => $_POST['nip']
+        ];
+
+        $db->table('matakuliah')->set($data)->insert();
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil ditambah!</div>');
+        return redirect()->back()->withInput();
+    }
+
+    public function absen()
+    {
+        $db = \Config\Database::connect();
+        $data = [
+            'status_absen' => 'Hadir'
+        ];
+
+        $db->table('absen')->set($data)->where(['nim' => session('username'), 'status' => 'Belum Selesai', 'status_absen' => 'Tidak Hadir'])->update();
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil Absen!</div>');
+        return redirect()->back()->withInput();
     }
 }

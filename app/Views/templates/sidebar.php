@@ -161,6 +161,17 @@
                 <a class="collapse-item text-light" href="<?= base_url('user/mahasiswa')?>">Mahasiswa</a>
             </div>
         </div>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities2"
+            aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-book"></i>
+            <span>Perkuliahan</span>
+        </a>
+        <div id="collapseUtilities2" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-gray-800 py-2 collapse-inner rounded">
+                <h6 class="collapse-header text-light">Pilih:</h6>
+                <a class="collapse-item text-light" href="<?= base_url('kuliah/view')?>">Matakuliah</a>
+            </div>
+        </div>
     </li>
     <?php }?>
 </li>
