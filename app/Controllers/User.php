@@ -153,6 +153,8 @@ class User extends BaseController
                 'email' => $_POST['email'],
                 'fakultas' => $_POST['fakultas'],
                 'prodi' => $_POST['prodi'],
+                'semester' => $_POST['semester'],
+                'kelas' => $_POST['kelas'],
                 'alamat' => $_POST['alamat'],
             ];
             $modeluser->updateMhs($data, $uri->getSegment(3));

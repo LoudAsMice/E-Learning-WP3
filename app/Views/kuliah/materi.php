@@ -27,7 +27,7 @@
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= $m['judul'];?></td>
                         <td><?= $m['deskripsi'];?></td>
-                        <td><?= $m['link'];?></td>
+                        <td><a href="<?= $m['link'];?>" target="_blank"><?= $m['link'];?></a></td>
                         <?php }?>
                     </tr>
                 </tbody>

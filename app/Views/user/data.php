@@ -16,7 +16,8 @@
                         <th scope="col">Email</th>
                         <th scope="col">Fakultas</th>
                         <th scope="col">Prodi</th>
-                        <th scope="col">Alamat</th>
+                        <th scope="col">Semester</th>
+                        <th scope="col">Kelas</th>
                         <th scope="col">Pilih</th>
                     </tr>
                 </thead>
@@ -31,7 +32,8 @@
                         <td><?= $u['email'];?></td>
                         <td><?= $u['fakultas'];?></td>
                         <td><?= $u['prodi'];?></td>
-                        <td><?= $u['alamat'];?></td>
+                        <td><?= $u['semester'];?></td>
+                        <td><?= $u['kelas'];?></td>
                         <td>
                             <a href="<?= base_url('user/ubahmahasiswa').'/'.$u['nim'];?>" class="badge badge-info"><i class="fas fa-edit"></i> Ubah</a>
                             <a href="<?= base_url('user/hapusmahasiswa').'/'.$u['nim'];?>" class="badge badge-danger" onclick="return confirm('Anda yakin akan menghapus <?= $judul.' '.$u['username']?>?');"><i class="fas fa-trash"></i> Hapus</a>

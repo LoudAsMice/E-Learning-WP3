@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2022 at 04:27 PM
+-- Generation Time: Dec 05, 2022 at 11:59 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -43,8 +43,10 @@ CREATE TABLE `absen` (
 --
 
 INSERT INTO `absen` (`id`, `nim`, `kelas`, `matkul`, `pertemuan`, `tanggal`, `status_absen`, `status`) VALUES
-(5, 15200318, '15.5B.01', 1, 1, 1669389974, 'Tidak Hadir', 'Belum Selesai'),
-(6, 15200319, '15.5B.01', 1, 1, 1669389974, 'Tidak Hadir', 'Belum Selesai');
+(16, 15200318, '15.5B.01', 1, 1, 1669434323, 'Hadir', 'Sudah Selesai'),
+(17, 15200318, '15.5B.01', 4, 1, 1669606100, 'Hadir', 'Sudah Selesai'),
+(18, 15200318, '15.5B.01', 1, 2, 1670130167, 'Tidak Hadir', 'Sudah Selesai'),
+(19, 15200318, '15.5B.01', 1, 3, 1670139476, 'Hadir', 'Sudah Selesai');
 
 -- --------------------------------------------------------
 
@@ -67,7 +69,7 @@ CREATE TABLE `dosen` (
 --
 
 INSERT INTO `dosen` (`nip`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `email`, `alamat`) VALUES
-(122, 'debay', 'Bekasi', '01 Januari 2000', 'Pria', 'fadhil@gmail.com', 'asd'),
+(122, 'debay', 'Bekasi', '01 Januari 2000', 'Pria', 'debay@gmail.com', 'asd'),
 (123, 'Fadhil', 'Bekasi', '01 Januari 2000', 'Pria', 'fadhil@gmail.com', 'asd');
 
 -- --------------------------------------------------------
@@ -96,7 +98,8 @@ CREATE TABLE `mahasiswa` (
 
 INSERT INTO `mahasiswa` (`nim`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `email`, `fakultas`, `prodi`, `semester`, `kelas`, `alamat`) VALUES
 (15200318, 'Muhamad Al Fadhil Satria', 'Bekasi', '01 Januari 2000', 'Pria', 'fadhilsatria789@gmail.com', 'Teknik dan Informatika', 'Ilmu Komputer', 5, '15.5B.01', 'Klapanunggal'),
-(15200319, 'Debay', 'Bekasi', '01 Januari 2000', 'Pria', 'debay@gmail.com', 'Komunikasi dan Bahasa', 'Ilmu Komunikasi', 5, '15.5B.01', '');
+(15200319, 'Debay', 'Bekasi', '01 Januari 2000', 'Pria', 'debay@gmail.com', 'Komunikasi dan Bahasa', 'Ilmu Komunikasi', 5, '15.5A.01', ''),
+(15200320, 'Tommy', 'Bekasi', '01 Januari 2000', 'Pria', '15200320@gmail.com', 'Teknik dan Informatika', 'Ilmu Komputer', 3, '15.3B.01', '');
 
 -- --------------------------------------------------------
 
@@ -106,6 +109,7 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `
 
 CREATE TABLE `matakuliah` (
   `id` int(11) NOT NULL,
+  `prodi` varchar(50) NOT NULL,
   `matakuliah` varchar(50) NOT NULL,
   `kelas` varchar(20) NOT NULL,
   `nip` int(20) NOT NULL
@@ -115,11 +119,12 @@ CREATE TABLE `matakuliah` (
 -- Dumping data for table `matakuliah`
 --
 
-INSERT INTO `matakuliah` (`id`, `matakuliah`, `kelas`, `nip`) VALUES
-(1, 'Web Programming', '15.5B.01', 123),
-(2, 'Komunikasi Tradisional', '14.5B.01', 123),
-(3, 'Web Programming', '15.5A.01', 122),
-(4, 'Mobile', '15.5B.01', 123);
+INSERT INTO `matakuliah` (`id`, `prodi`, `matakuliah`, `kelas`, `nip`) VALUES
+(1, 'Ilmu Komputer', 'Web Programming', '15.5B.01', 123),
+(2, 'Ilmu Komunikasi', 'Komunikasi Tradisional', '14.5B.01', 123),
+(3, 'Ilmu Komputer', 'Web Programming', '15.5A.01', 123),
+(4, 'Ilmu Komputer', 'Mobile', '15.5B.01', 123),
+(5, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', 122);
 
 -- --------------------------------------------------------
 
@@ -145,9 +150,9 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id`, `nip`, `prodi`, `matakuliah`, `kelas`, `tanggal`, `pertemuan`, `judul`, `deskripsi`, `link`) VALUES
-(10, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1669288945', '1', 'pt 1', 'tes', 'addsa'),
 (11, 123, 'Ilmu Ekonomi', 'Komunikasi Tradisional', '14.5B.01', '1669337030', '1', 'pt 1', 'tes', 'asdsad'),
-(12, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1669344637', '2', 'Pertemuan 2', 'silakan disimak video berikut', 'youtube');
+(16, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1669638317', '2', 'tessis', 'silakan disimak video berikut!!!aa', 'https://google.com'),
+(18, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', '1670159905', '1', 'testing', 'baca', 'pbo.com');
 
 -- --------------------------------------------------------
 
@@ -179,8 +184,9 @@ CREATE TABLE `nilai` (
 --
 
 INSERT INTO `nilai` (`id`, `id_tugas`, `nim`, `nip`, `prodi`, `matakuliah`, `kelas`, `pertemuan`, `judul`, `link`, `komentar`, `nilai`, `is_nilai`, `tugas_created`, `created`, `updated`) VALUES
-(19, 6, 15200318, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1', 'pt 1', 'bsi', '', 0, 0, 1664178500, 1669343522, 1669343522),
-(20, 7, 15200318, 122, 'Ilmu Komputer', 'Mobile', '15.5B.01', '1', 'pt 1', 'asd', 'mantep dek', 99, 1, 1664178500, 1669343526, 1669343931);
+(25, 12, 15200318, 123, 'Ilmu Komputer', 'Mobile', '15.5B.01', '1', 'Pertemuan 1', 'asdasdasdasd', 'ok deh', 75, 1, 1669682996, 1670138253, 1670145068),
+(26, 13, 15200318, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', '1', 'Tugas Pertemuan 1', 'yak', 'wokey', 99, 1, 1670159927, 1670160729, 1670160762),
+(27, 11, 15200318, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1', 'Pertemuan 1', 'https://drive.google.com', '', 0, 0, 1669682996, 1670214876, 1670214876);
 
 -- --------------------------------------------------------
 
@@ -226,8 +232,9 @@ CREATE TABLE `tugas` (
 --
 
 INSERT INTO `tugas` (`id`, `nip`, `prodi`, `matakuliah`, `kelas`, `judul`, `deskripsi`, `pertemuan`, `tanggal`, `link`) VALUES
-(6, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', 'pt 1', 'goodluck', 1, 1664178500, 'asdsad'),
-(7, 122, 'Ilmu Komputer', 'Mobile', '15.5B.01', 'Tugas Pertemuan 1', 'goodluck', 1, 1664178500, 'asdsad');
+(11, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', 'Pertemuan 1', 'Silakan dibaca y', 1, 1669682996, 'https://drive.google.com'),
+(12, 123, 'Ilmu Komputer', 'Mobile', '15.5B.01', 'Pertemuan 1', 'Silakan dibacaa', 1, 1669682996, 'https://drive.google.com'),
+(13, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', 'Tugas Pertemuan 1', 'goodluck', 1, 1670159927, 'pbo');
 
 -- --------------------------------------------------------
 
@@ -252,9 +259,10 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `username`, `password`, `image`, `role_id`, `is_active`, `tanggal_input`) VALUES
 (1, 'admin', '704b037a97fa9b25522b7c014c300f8a', 'default.jpg', 1, 1, 0),
 (16, '123', '202cb962ac59075b964b07152d234b70', 'default.jpg', 2, 1, 1664178185),
-(17, '15200318', '202cb962ac59075b964b07152d234b70', 'default.jpg', 3, 1, 1669281078),
+(17, '15200318', '202cb962ac59075b964b07152d234b70', '1669603687_214ee9dd40967e787311.jpg', 3, 1, 1669281078),
 (18, '15200319', '202cb962ac59075b964b07152d234b70', 'default.jpg', 3, 1, 1669285765),
-(19, '122', '202cb962ac59075b964b07152d234b70', 'default.jpg', 2, 1, 1664178185);
+(19, '122', '202cb962ac59075b964b07152d234b70', 'default.jpg', 2, 1, 1664178185),
+(21, '15200320', '202cb962ac59075b964b07152d234b70', 'default.jpg', 3, 1, 1670210678);
 
 --
 -- Indexes for dumped tables
@@ -264,7 +272,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `image`, `role_id`, `is_active
 -- Indexes for table `absen`
 --
 ALTER TABLE `absen`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nim_absen` (`nim`);
 
 --
 -- Indexes for table `dosen`
@@ -282,19 +291,23 @@ ALTER TABLE `mahasiswa`
 -- Indexes for table `matakuliah`
 --
 ALTER TABLE `matakuliah`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nip_matkul` (`nip`);
 
 --
 -- Indexes for table `materi`
 --
 ALTER TABLE `materi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nip_materi` (`nip`);
 
 --
 -- Indexes for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `nim_nilai` (`nim`),
+  ADD KEY `nip_nilai` (`nip`);
 
 --
 -- Indexes for table `role`
@@ -313,7 +326,8 @@ ALTER TABLE `tugas`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `role_user` (`role_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -323,25 +337,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `matakuliah`
 --
 ALTER TABLE `matakuliah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -353,13 +367,48 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `tugas`
 --
 ALTER TABLE `tugas`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `absen`
+--
+ALTER TABLE `absen`
+  ADD CONSTRAINT `nim_absen` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
+
+--
+-- Constraints for table `matakuliah`
+--
+ALTER TABLE `matakuliah`
+  ADD CONSTRAINT `nip_matkul` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`);
+
+--
+-- Constraints for table `materi`
+--
+ALTER TABLE `materi`
+  ADD CONSTRAINT `nip_materi` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`);
+
+--
+-- Constraints for table `nilai`
+--
+ALTER TABLE `nilai`
+  ADD CONSTRAINT `nim_nilai` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`),
+  ADD CONSTRAINT `nip_nilai` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `role_user` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

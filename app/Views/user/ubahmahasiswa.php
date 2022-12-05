@@ -113,7 +113,21 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label">Alamat</label>
+                    <label for="semester" class="col-sm-2 col-form-label">Semester</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="semester" name="semester" value="<?= $join['semester'];?>">
+                        <small class="text-danger pl-3"><?= $validation->getError('semester');?></small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="kelas" class="col-sm-2 col-form-label">Kelas</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="kelas" name="kelas" value="<?= $join['kelas'];?>">
+                        <small class="text-danger pl-3"><?= $validation->getError('kelas');?></small>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="alamat" name="alamat" value="<?= $join['alamat'];?>">
                         <small class="text-danger pl-3"><?= $validation->getError('alamat');?></small>
