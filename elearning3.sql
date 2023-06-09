@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2022 at 11:59 AM
+-- Generation Time: Jun 09, 2023 at 05:29 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -34,19 +34,10 @@ CREATE TABLE `absen` (
   `matkul` int(20) NOT NULL,
   `pertemuan` int(2) NOT NULL,
   `tanggal` int(20) NOT NULL,
+  `berita` text NOT NULL,
   `status_absen` enum('Hadir','Tidak Hadir') NOT NULL DEFAULT 'Tidak Hadir',
   `status` enum('Belum Selesai','Sudah Selesai') NOT NULL DEFAULT 'Belum Selesai'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `absen`
---
-
-INSERT INTO `absen` (`id`, `nim`, `kelas`, `matkul`, `pertemuan`, `tanggal`, `status_absen`, `status`) VALUES
-(16, 15200318, '15.5B.01', 1, 1, 1669434323, 'Hadir', 'Sudah Selesai'),
-(17, 15200318, '15.5B.01', 4, 1, 1669606100, 'Hadir', 'Sudah Selesai'),
-(18, 15200318, '15.5B.01', 1, 2, 1670130167, 'Tidak Hadir', 'Sudah Selesai'),
-(19, 15200318, '15.5B.01', 1, 3, 1670139476, 'Hadir', 'Sudah Selesai');
 
 -- --------------------------------------------------------
 
@@ -63,14 +54,6 @@ CREATE TABLE `dosen` (
   `email` varchar(100) NOT NULL,
   `alamat` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `dosen`
---
-
-INSERT INTO `dosen` (`nip`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `email`, `alamat`) VALUES
-(122, 'debay', 'Bekasi', '01 Januari 2000', 'Pria', 'debay@gmail.com', 'asd'),
-(123, 'Fadhil', 'Bekasi', '01 Januari 2000', 'Pria', 'fadhil@gmail.com', 'asd');
 
 -- --------------------------------------------------------
 
@@ -92,15 +75,6 @@ CREATE TABLE `mahasiswa` (
   `alamat` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `mahasiswa`
---
-
-INSERT INTO `mahasiswa` (`nim`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `email`, `fakultas`, `prodi`, `semester`, `kelas`, `alamat`) VALUES
-(15200318, 'Muhamad Al Fadhil Satria', 'Bekasi', '01 Januari 2000', 'Pria', 'fadhilsatria789@gmail.com', 'Teknik dan Informatika', 'Ilmu Komputer', 5, '15.5B.01', 'Klapanunggal'),
-(15200319, 'Debay', 'Bekasi', '01 Januari 2000', 'Pria', 'debay@gmail.com', 'Komunikasi dan Bahasa', 'Ilmu Komunikasi', 5, '15.5A.01', ''),
-(15200320, 'Tommy', 'Bekasi', '01 Januari 2000', 'Pria', '15200320@gmail.com', 'Teknik dan Informatika', 'Ilmu Komputer', 3, '15.3B.01', '');
-
 -- --------------------------------------------------------
 
 --
@@ -110,21 +84,12 @@ INSERT INTO `mahasiswa` (`nim`, `nama`, `tempatlahir`, `tanggallahir`, `jkel`, `
 CREATE TABLE `matakuliah` (
   `id` int(11) NOT NULL,
   `prodi` varchar(50) NOT NULL,
+  `semester` int(2) NOT NULL,
   `matakuliah` varchar(50) NOT NULL,
+  `jadwal` varchar(100) NOT NULL,
   `kelas` varchar(20) NOT NULL,
   `nip` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `matakuliah`
---
-
-INSERT INTO `matakuliah` (`id`, `prodi`, `matakuliah`, `kelas`, `nip`) VALUES
-(1, 'Ilmu Komputer', 'Web Programming', '15.5B.01', 123),
-(2, 'Ilmu Komunikasi', 'Komunikasi Tradisional', '14.5B.01', 123),
-(3, 'Ilmu Komputer', 'Web Programming', '15.5A.01', 123),
-(4, 'Ilmu Komputer', 'Mobile', '15.5B.01', 123),
-(5, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', 122);
 
 -- --------------------------------------------------------
 
@@ -144,15 +109,6 @@ CREATE TABLE `materi` (
   `deskripsi` varchar(250) NOT NULL,
   `link` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `materi`
---
-
-INSERT INTO `materi` (`id`, `nip`, `prodi`, `matakuliah`, `kelas`, `tanggal`, `pertemuan`, `judul`, `deskripsi`, `link`) VALUES
-(11, 123, 'Ilmu Ekonomi', 'Komunikasi Tradisional', '14.5B.01', '1669337030', '1', 'pt 1', 'tes', 'asdsad'),
-(16, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1669638317', '2', 'tessis', 'silakan disimak video berikut!!!aa', 'https://google.com'),
-(18, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', '1670159905', '1', 'testing', 'baca', 'pbo.com');
 
 -- --------------------------------------------------------
 
@@ -178,15 +134,6 @@ CREATE TABLE `nilai` (
   `created` int(20) NOT NULL,
   `updated` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `nilai`
---
-
-INSERT INTO `nilai` (`id`, `id_tugas`, `nim`, `nip`, `prodi`, `matakuliah`, `kelas`, `pertemuan`, `judul`, `link`, `komentar`, `nilai`, `is_nilai`, `tugas_created`, `created`, `updated`) VALUES
-(25, 12, 15200318, 123, 'Ilmu Komputer', 'Mobile', '15.5B.01', '1', 'Pertemuan 1', 'asdasdasdasd', 'ok deh', 75, 1, 1669682996, 1670138253, 1670145068),
-(26, 13, 15200318, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', '1', 'Tugas Pertemuan 1', 'yak', 'wokey', 99, 1, 1670159927, 1670160729, 1670160762),
-(27, 11, 15200318, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', '1', 'Pertemuan 1', 'https://drive.google.com', '', 0, 0, 1669682996, 1670214876, 1670214876);
 
 -- --------------------------------------------------------
 
@@ -227,15 +174,6 @@ CREATE TABLE `tugas` (
   `link` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `tugas`
---
-
-INSERT INTO `tugas` (`id`, `nip`, `prodi`, `matakuliah`, `kelas`, `judul`, `deskripsi`, `pertemuan`, `tanggal`, `link`) VALUES
-(11, 123, 'Ilmu Komputer', 'Web Programming', '15.5B.01', 'Pertemuan 1', 'Silakan dibaca y', 1, 1669682996, 'https://drive.google.com'),
-(12, 123, 'Ilmu Komputer', 'Mobile', '15.5B.01', 'Pertemuan 1', 'Silakan dibacaa', 1, 1669682996, 'https://drive.google.com'),
-(13, 122, 'Ilmu Komputer', 'Pemrograman Berbasis Obyek', '15.5B.01', 'Tugas Pertemuan 1', 'goodluck', 1, 1670159927, 'pbo');
-
 -- --------------------------------------------------------
 
 --
@@ -257,12 +195,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `image`, `role_id`, `is_active`, `tanggal_input`) VALUES
-(1, 'admin', '704b037a97fa9b25522b7c014c300f8a', 'default.jpg', 1, 1, 0),
-(16, '123', '202cb962ac59075b964b07152d234b70', 'default.jpg', 2, 1, 1664178185),
-(17, '15200318', '202cb962ac59075b964b07152d234b70', '1669603687_214ee9dd40967e787311.jpg', 3, 1, 1669281078),
-(18, '15200319', '202cb962ac59075b964b07152d234b70', 'default.jpg', 3, 1, 1669285765),
-(19, '122', '202cb962ac59075b964b07152d234b70', 'default.jpg', 2, 1, 1664178185),
-(21, '15200320', '202cb962ac59075b964b07152d234b70', 'default.jpg', 3, 1, 1670210678);
+(1, 'admin', '704b037a97fa9b25522b7c014c300f8a', 'default.jpg', 1, 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -306,8 +239,8 @@ ALTER TABLE `materi`
 --
 ALTER TABLE `nilai`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `nim_nilai` (`nim`),
-  ADD KEY `nip_nilai` (`nip`);
+  ADD KEY `nip_nilai` (`nip`),
+  ADD KEY `nim_nilai` (`nim`);
 
 --
 -- Indexes for table `role`
@@ -337,25 +270,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `absen`
 --
 ALTER TABLE `absen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `matakuliah`
 --
 ALTER TABLE `matakuliah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `nilai`
 --
 ALTER TABLE `nilai`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -367,13 +300,13 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `tugas`
 --
 ALTER TABLE `tugas`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints for dumped tables
@@ -383,7 +316,7 @@ ALTER TABLE `user`
 -- Constraints for table `absen`
 --
 ALTER TABLE `absen`
-  ADD CONSTRAINT `nim_absen` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`);
+  ADD CONSTRAINT `nim_absen` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `matakuliah`
@@ -401,7 +334,7 @@ ALTER TABLE `materi`
 -- Constraints for table `nilai`
 --
 ALTER TABLE `nilai`
-  ADD CONSTRAINT `nim_nilai` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`),
+  ADD CONSTRAINT `nim_nilai` FOREIGN KEY (`nim`) REFERENCES `mahasiswa` (`nim`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `nip_nilai` FOREIGN KEY (`nip`) REFERENCES `dosen` (`nip`);
 
 --

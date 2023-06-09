@@ -520,3 +520,11 @@ CRITICAL - 2023-06-09 04:10:45 --> Undefined array key "nip"
 #5 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #6 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
 #7 {main}
+CRITICAL - 2023-06-09 10:32:54 --> Trying to access array offset on value of type null
+#0 C:\xampp\htdocs\E-Learning-WP3\app\Controllers\Dosen.php(462): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to acces...', 'C:\\xampp\\htdocs...', 462)
+#1 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(832): App\Controllers\Dosen->absensi('OQ==', 'MTUuMUIuMDE=')
+#2 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dosen))
+#3 C:\xampp\htdocs\E-Learning-WP3\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\E-Learning-WP3\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\E-Learning-WP3\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
