@@ -27,7 +27,7 @@ class ModelKuliah extends Model
 
     public function getAbsensi($where)
     {
-        return $this->db->table('absen')->select('absen.id, mahasiswa.nim, mahasiswa.nama, mahasiswa.kelas, matakuliah.matakuliah, absen.pertemuan, absen.tanggal, absen.status_absen, absen.status')->join('mahasiswa', 'absen.nim = mahasiswa.nim')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere($where);
+        return $this->db->table('absen')->select('absen.id, absen.kelas, mahasiswa.nim, mahasiswa.nama, mahasiswa.kelas, matakuliah.matakuliah, absen.pertemuan, absen.tanggal, absen.status_absen, absen.status, absen.berita')->join('mahasiswa', 'absen.nim = mahasiswa.nim')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere($where);
     }
 
     public function hapusMateri($where = null)
@@ -38,6 +38,11 @@ class ModelKuliah extends Model
     public function hapusTugas($where = null)
     {
         return $this->db->table('tugas')->delete($where);
+    }
+
+    public function hapusMatakuliah($where = null)
+    {
+        return $this->db->table('matakuliah')->delete($where);
     }
 
     public function joinMateri($where)

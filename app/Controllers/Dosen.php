@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\ModelKuliah;
 use App\Models\ModelUser;
 
+use function App\Helpers\cek_login;
+
 class Dosen extends BaseController
 {
     public function materi()
@@ -458,6 +460,8 @@ class Dosen extends BaseController
         $mtk = $db->table('matakuliah')->getWhere(['id' => $idmatkul])->getRowArray();
 
         $data['kelas'] = $kelas ." || ". $mtk['matakuliah'];
+        $data['jadwal2'] = $db->table('matakuliah')->getWhere(['id' => $idmatkul])->getRowArray();
+        $data['jadwal'] = $db->table('absen')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere(['absen.matkul' => $idmatkul, 'absen.kelas' => $kelas])->getRowArray();
         $data['judul'] = 'Absensi Mahasiswa';
         $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
         $data['absensi'] = $modelkuliah->getAbsensi(['matkul' => $idmatkul, 'absen.kelas' => $kelas])->getResultArray();
@@ -556,13 +560,63 @@ class Dosen extends BaseController
         $uri = \Config\Services::uri();
         $id = base64_decode($uri->getSegment(3));
         $kls = base64_decode($uri->getSegment(4));
+        $berita = $_POST['berita'];
         $db = \Config\Database::connect();
 
         $cek = $db->table('absen')->getWhere(['matkul' => $id, 'kelas' => $kls, 'status' => 'Belum Selesai'])->getResultArray();
 
         foreach($cek as $c){
-            $db->table('absen')->set(['status' => 'Sudah Selesai'])->update();
-            return redirect()->back()->withInput();
+            $db->table('absen')->set(['status' => 'Sudah Selesai', 'berita' => $berita])->where(['id' => $c['id']])->update();
         }
+        return redirect()->back()->withInput();
+    }
+
+    public function ubahmtk()
+    {
+        $modeluser = new ModelUser();
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $data['validation'] = \Config\Services::validation();
+        $data['judul'] = 'Ubah Matakuliah';
+        $data['dosen'] = $db->table('dosen')->get()->getResultArray();
+        $data['user'] = $modeluser->cekData(['username' => session('username')])->getRowArray();
+        $data['matkul'] = $db->table('matakuliah')->join('dosen', 'matakuliah.nip = dosen.nip')->getWhere(['id' => base64_decode($uri->getSegment(3))])->getRowArray();
+
+        if(!$this->request->getPost()){
+        echo view('templates/header', $data);
+        echo view('templates/sidebar', $data);
+        echo view('templates/topbar', $data);
+        echo view('dosen/ubahmtk', $data);
+        echo view('templates/footer');
+        } else {
+            return $this->_ubahmtk();
+        }
+    }
+
+    private function _ubahmtk()
+    {
+        $db = \Config\Database::connect();
+        $uri = service('uri');
+        $data = [
+            'prodi' => $_POST['prodi'],
+            'matakuliah' => $_POST['matakuliah'],
+            'semester' => $_POST['semester'],
+            'kelas' => $_POST['kelas'],
+            'jadwal' => $_POST['jadwal'],
+            'nip' => $_POST['nip'],
+        ];
+
+        $db->table('matakuliah')->set($data)->where(['id' => base64_decode($uri->getSegment(3))])->update();
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Ubah Matakuliah Berhasil!</div>');
+        return redirect()->to('kuliah/view');
+    }
+
+    public function hapusmtk()
+    {
+        $modelkuliah = new ModelKuliah();
+        $uri = service('uri');
+        $modelkuliah->hapusMatakuliah(['id' => base64_decode($uri->getSegment(3))]);
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Matakuliah Berhasil Dihapus </div>');
+        return redirect()->back()->withInput();
     }
 }

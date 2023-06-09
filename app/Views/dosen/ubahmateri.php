@@ -10,7 +10,7 @@
         ?>
             <form action="<?= base_url('dosen/ubahmateri'). '/' . $idmtk . '/' . $klas . '/'. base64_encode($materi['id']);?>" enctype="multipart/form-data" method="post">
                 <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Judul</label>
+                    <label for="judul" class="col-sm-2 col-form-label">Judul</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="judul" name="judul" value="<?= $materi['judul'];?>">
                         <small class="text-danger pl-3"><?= $validation->getError('judul');?></small>

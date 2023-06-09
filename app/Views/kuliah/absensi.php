@@ -1,3 +1,9 @@
+<?php
+$uri = service('uri');
+$idmtk = $uri->getSegment(3);
+$kelaz = $uri->getSegment(4);
+?>
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="row">
@@ -8,7 +14,6 @@
                 <?php if($cek == null){?>
                 <a href="javascript:void(0)" class="btn btn-danger mb-3" data-toggle="modal" data-target="#absenBaruModal"><i class="fas fa-fingerprint"> Belum Mulai</i></a>
                 <?php } elseif ($cek != null && $cek['status_absen'] == 'Tidak Hadir') {
-                $uri = service('uri');
                 $id = $uri->getSegment(3);
                 $kls = $uri->getSegment(4);
                 ?>
@@ -17,6 +22,9 @@
                     <a href="javascript:void(0)" class="btn btn-warning mb-3"><i class="fas fa-fingerprint"> Sudah Absen</i></a>
                 <?php }?>
             </div>
+            <a href="<?= base_url('kuliah/cetak_absen/'. $idmtk . '/' . $kelaz); ?>" class="btn btn-primary mb-3"><i class="fas fa-print"></i> Print</a>
+            <a href="<?= base_url('kuliah/absen_pdf/'. $idmtk . '/' . $kelaz); ?>" class="btn btn-warning mb-3"><i class="far fa-file-pdf"></i> Download Pdf</a>
+            <a href="<?= base_url('kuliah/absen_excel/' . $idmtk . '/' . $kelaz); ?>" class="btn btn-success mb-3"><i class="far fa-file-excel"></i> Export ke Excel</a>
             <table class="table table-hover table-primary table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
@@ -27,6 +35,7 @@
                         <th scope="col">Matakuliah</th>
                         <th scope="col">Pertemuan</th>
                         <th scope="col">Tanggal</th>
+                        <th scope="col">Berita Acara</th>
                         <th scope="col">Status Absen</th>
                         <th scope="col">Status</th>
                     </tr>
@@ -44,6 +53,7 @@
                         <td><?= $m['matakuliah'];?></td>
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
+                        <td><?= $m['berita'];?></td>
                         <td>
                             <?php if($m['status_absen'] == "Tidak Hadir") {?>
                                 <a href="javascript:void(0)" class="btn btn-danger"> <?= $m['status_absen'];?></a>

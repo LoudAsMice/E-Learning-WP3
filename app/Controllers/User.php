@@ -11,6 +11,7 @@ use function App\Helpers\cek_login;
 
 class User extends BaseController
 {
+    public $modeluser;
     function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
@@ -377,13 +378,22 @@ class User extends BaseController
         }
     }
 
+    // public function hapusmahasiswa()
+    // {
+    //     $db = \Config\Database::connect();
+    //     $uri = service('uri');
+    //     // $id = $db->table('user')->getWhere(['username' => $uri->getSegment(3)])->getRowArray();
+    //     $db->table('user')->where(['username' => $uri->getSegment(3)])->delete();
+    //     $db->table('mahasiswa')->where(['nim' => $uri->getSegment(3)])->delete();
+    //     return redirect()->to('admin');
+    // }
     public function hapusmahasiswa()
     {
         $db = \Config\Database::connect();
         $uri = service('uri');
-        // $id = $db->table('user')->getWhere(['username' => $uri->getSegment(3)])->getRowArray();
         $db->table('user')->where(['username' => $uri->getSegment(3)])->delete();
         $db->table('mahasiswa')->where(['nim' => $uri->getSegment(3)])->delete();
-        return redirect()->to('admin');
+        session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Tugas Berhasil Dihapus </div>');
+        return redirect()->back()->withInput();
     }
 }

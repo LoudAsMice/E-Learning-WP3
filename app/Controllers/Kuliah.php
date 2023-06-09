@@ -4,9 +4,16 @@ namespace App\Controllers;
 
 use App\Models\ModelKuliah;
 use App\Models\ModelUser;
+use Dompdf\Dompdf;
 
 class Kuliah extends BaseController
 {
+    public $modeluser;
+
+    public function __construct()
+    {
+        $this->modeluser = new ModelUser();
+    }
     public function index()
     {
         $modeluser = new ModelUser();
@@ -233,7 +240,9 @@ class Kuliah extends BaseController
         $data = [
             'prodi' => $_POST['prodi'],
             'matakuliah' => $_POST['matakuliah'],
+            'semester' => $_POST['sem'],
             'kelas' => $_POST['kelas'],
+            'jadwal' => $_POST['hari'] . ", " . $_POST['mulai'] . " - " . $_POST['selesai'],
             'nip' => $_POST['nip']
         ];
 
@@ -252,5 +261,50 @@ class Kuliah extends BaseController
         $db->table('absen')->set($data)->where(['nim' => session('username'), 'status' => 'Belum Selesai', 'status_absen' => 'Tidak Hadir'])->update();
         session()->setFlashdata('pesan', '<div class="alert alert-success alert-message" role="alert">Berhasil Absen!</div>');
         return redirect()->back()->withInput();
+    }
+
+    public function cetak_absen()
+    {
+        $uri = service('uri');
+        $id = base64_decode($uri->getSegment(3));
+        $kls = base64_decode($uri->getSegment(4));
+        $db = \Config\Database::connect();
+        $data = [
+            'absen' => $db->table('absen')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere(['nim' => session('username'), 'matkul' => $id, 'absen.kelas' => $kls])->getResultArray()
+        ];
+
+        echo view('kuliah/cetak_absen', $data);
+    }
+
+    public function absen_pdf()
+    {
+        $uri = service('uri');
+        $id = base64_decode($uri->getSegment(3));
+        $kls = base64_decode($uri->getSegment(4));
+        $db = \Config\Database::connect();
+        $data['absen'] = $db->table('absen')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere(['nim' => session('username'), 'matkul' => $id, 'absen.kelas' => $kls])->getResultArray();
+
+        // $dompdf = new Dompdf();
+        $dom = new Dompdf();
+        $html = view('kuliah/absen_pdf', $data);
+        $paper_size = 'A4';
+        $orientation = 'landscape';
+
+        $dom->setPaper($paper_size, $orientation);
+
+        //Convert to PDF
+        $dom->loadHtml($html);
+        $dom->render();
+        $dom->stream("laporan_absen.pdf", array('Attachment' => 0)); 
+    }
+
+    public function absen_excel()
+    {
+        $uri = service('uri');
+        $id = base64_decode($uri->getSegment(3));
+        $kls = base64_decode($uri->getSegment(4));
+        $db = \Config\Database::connect();
+        $data = array('title' => 'Laporan Absen', 'absen' => $db->table('absen')->join('matakuliah', 'absen.matkul = matakuliah.id')->getWhere(['nim' => session('username'), 'matkul' => $id, 'absen.kelas' => $kls])->getResultArray());
+        echo view('kuliah/absen_excel', $data);
     }
 }

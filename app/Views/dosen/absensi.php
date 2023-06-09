@@ -10,17 +10,18 @@
         <div class="col-lg-12">
             <div class="text-center">
                 <h1 class="h4 mb-2 text-dark"><?= $kelas;?></h1>
+                <h1 class="h4 mb-2 text-dark"><?= $jadwal2['jadwal'];?></h1>
                 <?= session()->getFlashdata('pesan');?>
                 <?php if($cek == null){?>
                 <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#absenBaruModal"><i class="fas fa-fingerprint"> Open Absensi</i></a>
                 <?php } else {
-                $uri = service('uri');
-                $id = $uri->getSegment(3);
-                $kls = $uri->getSegment(4);    
                 ?>
-                <a href="<?= base_url('dosen/close'.'/'.$id.'/'.$kls);?>" class="btn btn-danger mb-3"><i class="fas fa-fingerprint"> Tutup Absensi</i></a>
+                <a href="" class="btn btn-danger mb-3" data-toggle="modal" data-target="#absenCloseModal"><i class="fas fa-fingerprint"> Close Absensi</i></a>
                 <?php }?>
             </div>
+            <!-- <a href="<?= base_url('dosen/cetak_laporan_buku'); ?>" class="btn btn-primary mb-3"><i class="fas fa-print"></i> Print</a>
+            <a href="<?= base_url('dosen/laporan_buku_pdf'); ?>" class="btn btn-warning mb-3"><i class="far fa-file-pdf"></i> Download Pdf</a>
+            <a href="<?= base_url('dosen/export_excel'); ?>" class="btn btn-success mb-3"><i class="far fa-file-excel"></i> Export ke Excel</a> -->
             <table class="table table-hover table-primary table-stripped table-responsive-md" id="dataTable">
                 <thead class="thead-dark">
                     <tr>
@@ -31,6 +32,7 @@
                         <th scope="col">Matakuliah</th>
                         <th scope="col">Pertemuan</th>
                         <th scope="col">Tanggal</th>
+                        <th scope="col">Berita Acara</th>
                         <th scope="col">Status Absen</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
@@ -49,6 +51,7 @@
                         <td><?= $m['matakuliah'];?></td>
                         <td><?= $m['pertemuan'];?></td>
                         <td><?= date('d-m-Y H:i:s', $m['tanggal']);?></td>
+                        <td><?= $m['berita'];?></td>
                         <td>
                             <?php if($m['status_absen'] == "Tidak Hadir") {?>
                                 <a href="javascript:void(0)" class="btn btn-danger"> <?= $m['status_absen'];?></a>
@@ -121,3 +124,37 @@
     </div>
 </div>
 <!-- End of Modal Tambah Menu -->
+
+
+<div class="modal fade" id="absenCloseModal" tabindex="-1" role="dialog" aria-labelledby="absenBaruModalLabel" aria-hidden="true"> 
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="absenBaruModalLabel">
+                    Close Absen
+                </h5>
+                <button type="submit" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <?php 
+            $uri = service('uri');
+            $id = $uri->getSegment('3');
+            $matkul = $uri->getSegment('4');
+            ?>
+            <form action="<?= base_url('dosen/close'.'/'.$id.'/'.$kls);?>" method="post" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="berita" name="berita" placeholder="Masukkan Berita Acara">
+                    <small class="text-danger pl-1"><?= $validation->getError('berita');?></small>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-ban"></i> Close</button>
+                <button type="submit" class="btn btn-danger"><i class="fas fa-ban"></i> Close Absen</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
