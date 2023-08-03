@@ -19,7 +19,7 @@
     <h3><center>Laporan Absen</center></h3>
     <br>
     <table class="table-data">
-    <thead>
+        <thead>
             <tr>
                 <th>No</th>
                 <th>Status Absen</th>

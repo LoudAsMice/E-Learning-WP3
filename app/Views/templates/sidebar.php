@@ -52,33 +52,33 @@
             $i = 2;
             foreach ($matkul as $mtk) {
         ?>
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data<?= $i;?>"aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-book"></i>
-            <span><?= $mtk['matakuliah'];?></span>
-        </a>
-        <div id="data<?= $i; $i++;?>" class="collapse" aria-labelledby="headingUtilities"data-parent="#accordionSidebar">
-            <?php 
-                $getkls = $db->table('matakuliah')->getWhere(['matakuliah' => $mtk['matakuliah']])->getResultArray();
-                // var_dump($getkls);
-                foreach ($getkls as $m) {?>
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data<?= $i;?>" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-book-open"></i>
-                <span><?= $m['kelas'];?></span>
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data<?= $i;?>"aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-book"></i>
+                <span><?= $mtk['matakuliah'];?></span>
             </a>
-            <div class="collapse" id="data<?= $i; $i++;?>" aria-labelledby="headingUtilities" data-bs-parent="#accordionSidebar">
-                <div class="bg-gray-800 py-2 collapse-inner rounded">
-                    <h6 class="collapse-header text-light">Pilih:</h6>
-                    <a class="collapse-item text-light" href="<?= base_url('dosen/absensi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Absensi</a>
-                    <a class="collapse-item text-light" href="<?= base_url('dosen/materi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Materi</a>
-                    <a class="collapse-item text-light" href="<?= base_url('dosen/tugas/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Tugas</a>
-                    <a class="collapse-item text-light" href="<?= base_url('dosen/nilai/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Input Nilai Tugas</a>
-                    <a class="collapse-item text-light" href="<?= base_url('dosen/semua/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Ubah Nilai</a>
+            <div id="data<?= $i; $i++;?>" class="collapse" aria-labelledby="headingUtilities"data-parent="#accordionSidebar">
+                <?php 
+                    $getkls = $db->table('matakuliah')->getWhere(['matakuliah' => $mtk['matakuliah']])->getResultArray();
+                    // var_dump($getkls);
+                    foreach ($getkls as $m) {?>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#data<?= $i;?>" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-book-open"></i>
+                    <span><?= $m['kelas'];?></span>
+                </a>
+                <div class="collapse" id="data<?= $i; $i++;?>" aria-labelledby="headingUtilities" data-bs-parent="#accordionSidebar">
+                    <div class="bg-gray-800 py-2 collapse-inner rounded">
+                        <h6 class="collapse-header text-light">Pilih:</h6>
+                        <a class="collapse-item text-light" href="<?= base_url('dosen/absensi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Absensi</a>
+                        <a class="collapse-item text-light" href="<?= base_url('dosen/materi/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Materi</a>
+                        <a class="collapse-item text-light" href="<?= base_url('dosen/tugas/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Tugas</a>
+                        <a class="collapse-item text-light" href="<?= base_url('dosen/nilai/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Input Nilai Tugas</a>
+                        <a class="collapse-item text-light" href="<?= base_url('dosen/semua/'. base64_encode($m['id']).'/'. base64_encode($m['kelas']));?>"> Ubah Nilai</a>
+                    </div>
                 </div>
+                <?php }?>
+                    
             </div>
-            <?php }?>
-                
-        </div>
-        <?php $i++;}}?>
+            <?php $i++;}}?>
         <!-- <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-book"></i>
             <span>Tes</span>
